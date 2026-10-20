@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Snake</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial,sans-serif}
+body{background:#1a2b1a;color:#cfe8cf;display:flex;flex-direction:column;align-items:center;padding:10px;touch-action:none}
+h1{margin:8px 0;font-size:30px}
+.bar{display:flex;gap:14px;margin-bottom:8px;font-size:16px}
+button{background:#4a8f4a;color:#fff;border:0;border-radius:6px;padding:8px 16px;font-weight:bold;cursor:pointer}
+canvas{background:#0e1f0e;border:2px solid #4a8f4a;border-radius:8px;width:min(480px,92vw);height:min(480px,92vw)}
+#msg{margin-top:8px;font-size:16px;min-height:22px}
+</style>
+</head>
+<body>
+<h1>🐍 Snake</h1>
+<div class="bar"><div>Score: <b id="score">0</b></div><div>Best: <b id="best">0</b></div><button onclick="reset()">Restart</button></div>
+<canvas id="cv" width="480" height="480"></canvas>
+<div id="msg">Use arrow keys / WASD or swipe to play</div>
+<script>
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d'),G=24,N=20;
+let snake,dir,ndir,food,score,best=+(localStorage.getItem('snakeBest')||0),timer,speed;
+document.getElementById('best').textContent=best;
+function reset(){snake=[[10,10],[9,10],[8,10]];dir=[1,0];ndir=dir;score=0;speed=140;spawn();document.getElementById('score').textContent=0;document.getElementById('msg').textContent='';clearInterval(timer);timer=setInterval(tick,speed)}
+function spawn(){do{food=[Math.random()*N|0,Math.random()*N|0]}while(snake.some(s=>s[0]===food[0]&&s[1]===food[1]))}
+function tick(){
+ dir=ndir;
+ const h=[(snake[0][0]+dir[0]+N)%N,(snake[0][1]+dir[1]+N)%N];
+ if(snake.some(s=>s[0]===h[0]&&s[1]===h[1])){clearInterval(timer);document.getElementById('msg').textContent='Game Over! Press Restart';if(score>best){best=score;localStorage.setItem('snakeBest',best);document.getElementById('best').textContent=best}return}
+ snake.unshift(h);
+ if(h[0]===food[0]&&h[1]===food[1]){score+=10;document.getElementById('score').textContent=score;spawn();clearInterval(timer);speed=Math.max(70,speed-3);timer=setInterval(tick,speed)}
+ else snake.pop();
+ draw()}
+function draw(){
+ ctx.fillStyle='#0e1f0e';ctx.fillRect(0,0,cv.width,cv.height);
+ ctx.fillStyle='#e74c3c';ctx.beginPath();ctx.arc(food[0]*G+G/2,food[1]*G+G/2,G/2.5,0,7);ctx.fill();
+ snake.forEach((s,i)=>{ctx.fillStyle=i===0?'#7ef97e':`hsl(120,50%,${45-i}%)`;ctx.fillRect(s[0]*G+1,s[1]*G+1,G-2,G-2)})}
+document.addEventListener('keydown',e=>{const m={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1],a:[-1,0],d:[1,0],w:[0,-1],s:[0,1]}[e.key];
+ if(m&&!(m[0]===-dir[0]&&m[1]===-dir[1])){ndir=m;e.preventDefault()}});
+let ts=null;
+cv.addEventListener('touchstart',e=>{ts=[e.touches[0].clientX,e.touches[0].clientY]},{passive:true});
+cv.addEventListener('touchend',e=>{if(!ts)return;const dx=e.changedTouches[0].clientX-ts[0],dy=e.changedTouches[0].clientY-ts[1];
+ if(Math.max(Math.abs(dx),Math.abs(dy))>24){const m=Math.abs(dx)>Math.abs(dy)?[Math.sign(dx),0]:[0,Math.sign(dy)];if(!(m[0]===-dir[0]&&m[1]===-dir[1]))ndir=m}ts=null},{passive:true});
+reset();
+</script>
+</body>
+</html>

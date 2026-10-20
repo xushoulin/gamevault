@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>2048</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,'Segoe UI',Arial,sans-serif}
+body{background:#faf8ef;color:#776e65;display:flex;flex-direction:column;align-items:center;padding:10px;touch-action:none}
+h1{font-size:40px;margin:8px 0}
+.bar{display:flex;gap:10px;margin-bottom:10px}
+.score-box{background:#bbada0;color:#fff;border-radius:6px;padding:6px 16px;text-align:center;min-width:80px}
+.score-box .t{font-size:11px;text-transform:uppercase}.score-box .v{font-size:20px;font-weight:bold}
+button{background:#8f7a66;color:#f9f6f2;border:0;border-radius:6px;padding:10px 18px;font-size:15px;font-weight:bold;cursor:pointer}
+#grid{background:#bbada0;border-radius:8px;padding:8px;position:relative;width:min(460px,92vw);height:min(460px,92vw)}
+.cell{position:absolute;background:rgba(238,228,218,.35);border-radius:6px}
+.tile{position:absolute;display:flex;align-items:center;justify-content:center;font-weight:bold;border-radius:6px;transition:top .12s,left .12s;font-size:26px}
+#msg{margin-top:10px;font-size:18px;font-weight:bold;min-height:24px}
+</style>
+</head>
+<body>
+<h1>2048</h1>
+<div class="bar"><div class="score-box"><div class="t">Score</div><div class="v" id="score">0</div></div><button onclick="reset()">New Game</button></div>
+<div id="grid"></div>
+<div id="msg"></div>
+<script>
+const N=4,grid=document.getElementById('grid'),scoreEl=document.getElementById('score'),msg=document.getElementById('msg');
+let board,score,won,over;
+const COLORS={2:'#eee4da',4:'#ede0c8',8:'#f2b179',16:'#f59563',32:'#f67c5f',64:'#f65e3b',128:'#edcf72',256:'#edcc61',512:'#edc850',1024:'#edc53f',2048:'#edc22e'};
+function reset(){board=Array.from({length:N},()=>Array(N).fill(0));score=0;won=false;over=false;msg.textContent='';add();add();draw()}
+function cellSize(){const w=grid.clientWidth-16;return{w:w/N,w2:(w-8*(N-1))/N}}
+function add(){const e=[];for(let r=0;r<N;r++)for(let c=0;c<N;c++)if(!board[r][c])e.push([r,c]);if(!e.length)return;const[r,c]=e[Math.random()*e.length|0];board[r][c]=Math.random()<.9?2:4}
+function draw(){
+ grid.querySelectorAll('.tile').forEach(t=>t.remove());
+ document.querySelectorAll('.cell').forEach(c=>c.remove());
+ const{w,w2}=cellSize();
+ for(let r=0;r<N;r++)for(let c=0;c<N;c++){const d=document.createElement('div');d.className='cell';d.style.cssText=`width:${w2}px;height:${w2}px;left:${8+c*(w2+8)}px;top:${8+r*(w2+8)}px`;grid.appendChild(d)}
+ for(let r=0;r<N;r++)for(let c=0;c<N;c++){const v=board[r][c];if(!v)continue;const t=document.createElement('div');t.className='tile';t.textContent=v;
+  const fs=v<100?28:v<1000?22:16;
+  t.style.cssText=`width:${w2}px;height:${w2}px;left:${8+c*(w2+8)}px;top:${8+r*(w2+8)}px;background:${COLORS[v]||'#3c3a32'};color:${v<=4?'#776e65':'#f9f6f2'};font-size:${fs}px`;
+  grid.appendChild(t)}
+ scoreEl.textContent=score}
+function move(dir){
+ if(over)return;
+ const rot=(b,n)=>{let x=b;for(let i=0;i<n;i++)x=x[0].map((_,c)=>x.map(r=>r[c]).reverse());return x};
+ const k={left:0,up:1,right:2,down:3}[dir];
+ let b=rot(board.map(r=>[...r]),k),moved=false,gain=0;
+ const merged=Array.from({length:N},()=>Array(N).fill(0));
+ for(let r=0;r<N;r++){const row=b[r].filter(v=>v);
+  for(let i=0;i<row.length-1;i++)if(row[i]===row[i+1]){row[i]*=2;gain+=row[i];row.splice(i+1,1);
+   if(row[i]===2048&&!won){won=true;msg.textContent='You win! Keep going...'}}
+  while(row.length<N)row.push(0);
+  for(let c=0;c<N;c++)if(b[r][c]!==row[c]){moved=true;b[r][c]=row[c]}}
+ if(!moved)return;
+ board=rot(b,(4-k)%4);score+=gain;add();draw();
+ const canMove=board.some(r=>r.some(v=>!v))||(()=>{for(let r=0;r<N;r++)for(let c=0;c<N;c++){if(c<N-1&&board[r][c]===board[r][c+1])return true;if(r<N-1&&board[r][c]===board[r+1][c])return true}return false})();
+ if(!canMove){over=true;msg.textContent='Game Over!'}}
+document.addEventListener('keydown',e=>{const m={ArrowLeft:'left',ArrowRight:'right',ArrowUp:'up',ArrowDown:'down',a:'left',d:'right',w:'up',s:'down'}[e.key];if(m){e.preventDefault();move(m)}});
+let ts=null;
+grid.addEventListener('touchstart',e=>{ts=[e.touches[0].clientX,e.touches[0].clientY]},{passive:true});
+grid.addEventListener('touchend',e=>{if(!ts)return;const dx=e.changedTouches[0].clientX-ts[0],dy=e.changedTouches[0].clientY-ts[1];
+ if(Math.max(Math.abs(dx),Math.abs(dy))>24)move(Math.abs(dx)>Math.abs(dy)?(dx>0?'right':'left'):(dy>0?'down':'up'));ts=null},{passive:true});
+window.addEventListener('resize',draw);
+reset();
+</script>
+</body>
+</html>

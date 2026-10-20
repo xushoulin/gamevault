@@ -1,0 +1,14 @@
+   ▲ Next.js 15.5.28
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, mkdir '/Users/xushoulin/WorkBuddy/2026-10-20-11-13-10/gamevault/.next/cache/webpack/server-production'
+Failed to compile.
+
+Error: EEXIST: file already exists, mkdir '/Users/xushoulin/WorkBuddy/2026-10-20-11-13-10/gamevault/.next/server'
+    at createBrokerPolicyError (/Applications/WorkBuddy.app/Contents/Resources/app.asar.unpacked/cli/vendor/shim/node-brokered-fs-shim.cjs:253:19)
+    at handleBrokerHostOperationResponse (/Applications/WorkBuddy.app/Contents/Resources/app.asar.unpacked/cli/vendor/shim/node-brokered-fs-shim.cjs:275:11)
+    at tryBrokerHostOperation (/Applications/WorkBuddy.app/Contents/Resources/app.asar.unpacked/cli/vendor/shim/node-brokered-fs-shim.cjs:520:16)
+
+
+> Build failed because of webpack errors

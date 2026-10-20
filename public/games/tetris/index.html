@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Tetris</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial,sans-serif}
+body{background:#14141f;color:#ddd;display:flex;flex-direction:column;align-items:center;padding:8px;touch-action:none}
+h1{margin:6px 0;font-size:28px}
+.bar{display:flex;gap:16px;margin-bottom:6px;font-size:15px;align-items:center}
+button{background:#5c6bc0;color:#fff;border:0;border-radius:6px;padding:7px 14px;font-weight:bold;cursor:pointer}
+canvas{background:#0a0a12;border:2px solid #5c6bc0;border-radius:8px;width:min(300px,60vw);height:min(600px,78vw)}
+#msg{margin-top:6px;font-size:15px;min-height:20px}
+</style>
+</head>
+<body>
+<h1>Tetris</h1>
+<div class="bar"><div>Score: <b id="score">0</b></div><div>Lines: <b id="lines">0</b></div><button onclick="reset()">Restart</button></div>
+<canvas id="cv" width="300" height="600"></canvas>
+<div id="msg">← → move · ↑ rotate · ↓ soft drop</div>
+<script>
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d'),G=30,COLS=10,ROWS=20;
+const SH=[[[1,1,1,1]],[[1,1],[1,1]],[[0,1,0],[1,1,1]],[[1,0,0],[1,1,1]],[[0,0,1],[1,1,1]],[[1,1,0],[0,1,1]],[[0,1,1],[1,1,0]]];
+const COL=['#42a5f5','#ffd54f','#ab47bc','#ef5350','#26a6a6','#66bb6a','#ff7043'];
+let board,cur,pos,rot,score,lines,timer,speed;
+function reset(){board=Array.from({length:ROWS},()=>Array(COLS).fill(-1));score=0;lines=0;speed=500;document.getElementById('score').textContent=0;document.getElementById('lines').textContent=0;document.getElementById('msg').textContent='';spawn();clearInterval(timer);timer=setInterval(tick,speed)}
+function spawn(){cur=Math.random()*7|0;rot=0;pos=[Math.floor(COLS/2)-1,0];if(hit(pos[0],pos[1],rot)){clearInterval(timer);document.getElementById('msg').textContent='Game Over! Press Restart'}}
+function shape(){return SH[cur][0].map((r,y)=>r.map((v,x)=>0))}
+function rotShape(s){return s[0].map((_,x)=>s.map(r=>r[x]).reverse())}
+function curShape(){let s=SH[cur].map(r=>[...r]);for(let i=0;i<rot;i++)s=rotShape(s);return s}
+function hit(px,py,r){let s=curShape();for(let i=0;i<r;i++)s=rotShape(s);
+ for(let y=0;y<s.length;y++)for(let x=0;x<s[y].length;x++){if(!s[y][x])continue;
+  const nx=px+x,ny=py+y;
+  if(nx<0||nx>=COLS||ny>=ROWS)return true;
+  if(ny>=0&&board[ny][nx]>=0)return true}return false}
+function tick(){if(!hit(pos[0],pos[1]+1,rot))pos[1]++;else lock()}
+function lock(){let s=curShape();
+ for(let y=0;y<s.length;y++)for(let x=0;x<s[y].length;x++)if(s[y][x]&&pos[1]+y>=0)board[pos[1]+y][pos[0]+x]=cur;
+ let cleared=0;
+ for(let y=ROWS-1;y>=0;y--)if(board[y].every(v=>v>=0)){board.splice(y,1);board.unshift(Array(COLS).fill(-1));cleared++;y++}
+ if(cleared){lines+=cleared;score+=[0,100,300,500,800][cleared];document.getElementById('score').textContent=score;document.getElementById('lines').textContent=lines;
+  if(lines%5===0){speed=Math.max(120,speed-40);clearInterval(timer);timer=setInterval(tick,speed)}}
+ spawn()}
+function draw(){ctx.fillStyle='#0a0a12';ctx.fillRect(0,0,cv.width,cv.height);
+ for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+  let c=-1;
+  if(board[y][x]>=0)c=board[y][x];
+  else{const s=curShape();const lx=x-pos[0],ly=y-pos[1];
+   if(ly>=0&&ly<s.length&&lx>=0&&lx<s[ly].length&&s[ly][lx]&&y>=pos[1])c=cur}
+  if(c>=0){ctx.fillStyle=COL[c];ctx.fillRect(x*G+1,y*G+1,G-2,G-2)}}}
+setInterval(draw,50);
+document.addEventListener('keydown',e=>{
+ if(e.key==='ArrowLeft'&&!hit(pos[0]-1,pos[1],rot)){pos[0]--;e.preventDefault()}
+ else if(e.key==='ArrowRight'&&!hit(pos[0]+1,pos[1],rot)){pos[0]++;e.preventDefault()}
+ else if(e.key==='ArrowDown'&&!hit(pos[0],pos[1]+1,rot)){pos[1]++;score+=1;document.getElementById('score').textContent=score;e.preventDefault()}
+ else if(e.key==='ArrowUp'){const nr=(rot+1)%4;if(!hit(pos[0],pos[1],nr))rot=nr;e.preventDefault()}});
+reset();
+</script>
+</body>
+</html>

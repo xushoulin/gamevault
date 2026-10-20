@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Brick Breaker</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial,sans-serif}
+body{background:#0f1524;color:#dde;display:flex;flex-direction:column;align-items:center;padding:8px;touch-action:none}
+h1{margin:6px 0;font-size:26px}
+.bar{display:flex;gap:14px;font-size:15px;margin-bottom:6px;align-items:center}
+button{background:#38bdf8;color:#04283c;border:0;border-radius:6px;padding:7px 14px;font-weight:bold;cursor:pointer}
+canvas{background:#111a2e;border:2px solid #38bdf8;border-radius:8px;width:min(480px,92vw)}
+#msg{margin-top:6px;font-size:15px;min-height:20px}
+</style>
+</head>
+<body>
+<h1>🧱 Brick Breaker</h1>
+<div class="bar"><div>Score: <b id="score">0</b></div><div>Lives: <b id="lives">3</b></div><button onclick="reset()">Restart</button></div>
+<canvas id="cv" width="480" height="360"></canvas>
+<div id="msg">Move mouse or drag to control the paddle · Click to launch</div>
+<script>
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+let paddle,ball,bricks,score,lives,running,raf;
+const BW=60,BH=16,ROWS=5,COLS=8;
+function reset(){paddle={x:210,w:100};ball={x:240,y:300,vx:3,vy:-4,r:7};bricks=[];score=0;lives=3;running=false;
+ document.getElementById('score').textContent=0;document.getElementById('lives').textContent=3;
+ for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++)bricks.push({x:12+c*(BW+4),y:36+r*(BH+4),alive:true,col:['#f87171','#fb923c','#facc15','#4ade80','#38bdf8'][r]});
+ document.getElementById('msg').textContent='Click to launch';cancelAnimationFrame(raf);loop()}
+function loop(){
+ ctx.fillStyle='#111a2e';ctx.fillRect(0,0,cv.width,cv.height);
+ bricks.forEach(b=>{if(!b.alive)return;ctx.fillStyle=b.col;ctx.fillRect(b.x,b.y,BW,BH)});
+ ctx.fillStyle='#38bdf8';ctx.fillRect(paddle.x,340,paddle.w,10);
+ ctx.beginPath();ctx.arc(ball.x,ball.y,ball.r,0,7);ctx.fillStyle='#fff';ctx.fill();
+ if(running){
+  ball.x+=ball.vx;ball.y+=ball.vy;
+  if(ball.x<ball.r||ball.x>cv.width-ball.r)ball.vx*=-1;
+  if(ball.y<ball.r)ball.vy*=-1;
+  if(ball.y>342-ball.r&&ball.y<352&&ball.x>paddle.x&&ball.x<paddle.x+paddle.w&&ball.vy>0){
+   ball.vy=-Math.abs(ball.vy);ball.vx=3*((ball.x-(paddle.x+paddle.w/2))/(paddle.w/2))}
+  bricks.forEach(b=>{if(!b.alive)return;
+   if(ball.x>b.x-ball.r&&ball.x<b.x+BW+ball.r&&ball.y>b.y-ball.r&&ball.y<b.y+BH+ball.r){b.alive=false;ball.vy*=-1;score+=10;document.getElementById('score').textContent=score}});
+  if(ball.y>cv.height){lives--;document.getElementById('lives').textContent=lives;
+   if(lives<=0){running=false;document.getElementById('msg').textContent='Game Over! Press Restart'}
+   else{ball={x:240,y:300,vx:3,vy:-4,r:7};running=false;document.getElementById('msg').textContent='Click to launch'}}
+  if(bricks.every(b=>!b.alive)){running=false;document.getElementById('msg').textContent='🎉 You Win!'}}
+ raf=requestAnimationFrame(loop)}
+cv.addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();const x=(e.clientX-r.left)*(cv.width/r.width);paddle.x=Math.max(0,Math.min(cv.width-paddle.w,x-paddle.w/2))});
+cv.addEventListener('touchmove',e=>{const r=cv.getBoundingClientRect();const x=(e.touches[0].clientX-r.left)*(cv.width/r.width);paddle.x=Math.max(0,Math.min(cv.width-paddle.w,x-paddle.w/2));e.preventDefault()},{passive:false});
+cv.addEventListener('click',()=>{if(!running&&lives>0){running=true;document.getElementById('msg').textContent=''}});
+reset();
+</script>
+</body>
+</html>

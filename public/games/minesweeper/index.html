@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Minesweeper</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial,sans-serif;user-select:none}
+body{background:#2b2b3b;color:#eee;display:flex;flex-direction:column;align-items:center;padding:10px}
+h1{margin:6px 0;font-size:28px}
+.bar{display:flex;gap:16px;margin-bottom:8px;font-size:16px;align-items:center}
+button{background:#e2b714;color:#222;border:0;border-radius:6px;padding:8px 14px;font-weight:bold;cursor:pointer}
+#board{display:grid;grid-template-columns:repeat(10,32px);gap:3px;background:#3a3a4f;padding:8px;border-radius:8px}
+.cell{width:32px;height:32px;background:#565678;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:15px;cursor:pointer}
+.cell.r{background:#44445c;cursor:default}
+.cell.mine{background:#e74c3c}
+#msg{margin-top:8px;font-size:16px;min-height:22px}
+</style>
+</head>
+<body>
+<h1>💣 Minesweeper</h1>
+<div class="bar"><div>🚩 <b id="flags">10</b></div><button onclick="reset()">New Game</button></div>
+<div id="board"></div>
+<div id="msg">Left click reveal · Right click / long press flag</div>
+<script>
+const N=10,MINES=10,el=document.getElementById('board'),msg=document.getElementById('msg'),flagsEl=document.getElementById('flags');
+let grid,revealed,flagged,over,first;
+const NUMC=['','#64b5f6','#81c784','#ffb74d','#e57373','#ba68c8','#4dd0e1','#fff','#999'];
+function reset(){grid=Array(N*N).fill(0);revealed=Array(N*N).fill(false);flagged=Array(N*N).fill(false);over=false;first=true;flagsEl.textContent=MINES;msg.textContent='';draw()}
+function plant(safe){let p=Array.from({length:N*N},(_,i)=>i).filter(i=>i!==safe&&nb(safe).includes(i)===false);
+ for(let m=0;m<MINES;m++){const i=Math.random()*p.length|0;grid[p[i]]=-1;p.splice(i,1)}
+ for(let i=0;i<N*N;i++)if(grid[i]!==-1)grid[i]=nb(i).filter(j=>grid[j]===-1).length}
+function nb(i){const r=i/N|0,c=i%N,out=[];for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){if(!dr&&!dc)continue;const nr=r+dr,nc=c+dc;if(nr>=0&&nr<N&&nc>=0&&nc<N)out.push(nr*N+nc)}return out}
+function reveal(i){if(over||flagged[i]||revealed[i])return;
+ if(first){plant(i);first=false}
+ if(grid[i]===-1){over=true;for(let j=0;j<N*N;j++)if(grid[j]===-1)revealed[j]=true;msg.textContent='💥 Boom! Game Over';draw();return}
+ const st=[i];while(st.length){const j=st.pop();if(revealed[j]||flagged[j])continue;revealed[j]=true;
+  if(grid[j]===0)nb(j).forEach(k=>{if(!revealed[k])st.push(k)})}
+ const left=N*N-MINES-revealed.filter(Boolean).length;
+ if(left===0){over=true;msg.textContent='🎉 You Win!'}draw()}
+function draw(){el.innerHTML='';
+ for(let i=0;i<N*N;i++){const d=document.createElement('div');d.className='cell';
+  if(revealed[i]){d.classList.add('r');if(grid[i]===-1){d.classList.add('mine');d.textContent='💣'}else if(grid[i]>0){d.textContent=grid[i];d.style.color=NUMC[grid[i]]}}
+  else if(flagged[i])d.textContent='🚩';
+  d.oncontextmenu=e=>{e.preventDefault();if(over||revealed[i])return;flagged[i]=!flagged[i];flagsEl.textContent=MINES-flagged.filter(Boolean).length;draw()};
+  let lp;
+  d.addEventListener('touchstart',e=>{lp=setTimeout(()=>{if(over||revealed[i])return;flagged[i]=!flagged[i];flagsEl.textContent=MINES-flagged.filter(Boolean).length;draw()},400)},{passive:true});
+  d.addEventListener('touchend',()=>clearTimeout(lp));
+  d.onclick=()=>reveal(i);
+  el.appendChild(d)}}
+reset();
+</script>
+</body>
+</html>

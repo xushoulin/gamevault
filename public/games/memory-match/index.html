@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Memory Match</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,Arial,sans-serif}
+body{background:#312e5e;color:#eee;display:flex;flex-direction:column;align-items:center;padding:10px}
+h1{margin:6px 0;font-size:28px}
+.bar{display:flex;gap:16px;margin-bottom:8px;font-size:16px;align-items:center}
+button{background:#8b5cf6;color:#fff;border:0;border-radius:6px;padding:8px 14px;font-weight:bold;cursor:pointer}
+#board{display:grid;grid-template-columns:repeat(6,68px);gap:8px}
+.card{width:68px;height:68px;border-radius:8px;background:#4c4885;display:flex;align-items:center;justify-content:center;font-size:34px;cursor:pointer;transition:transform .2s,background .2s}
+.card.flip{background:#fff;transform:rotateY(180deg) scale(1.02)}
+.card.done{background:#22c55e;opacity:.55;cursor:default}
+#msg{margin-top:10px;font-size:17px;min-height:22px}
+@media(max-width:480px){#board{grid-template-columns:repeat(4,68px)}}
+</style>
+</head>
+<body>
+<h1>🃏 Memory Match</h1>
+<div class="bar"><div>Moves: <b id="moves">0</b></div><div>Pairs: <b id="pairs">0</b>/12</div><button onclick="reset()">New Game</button></div>
+<div id="board"></div>
+<div id="msg">Flip two cards and find all 12 pairs</div>
+<script>
+const EMO=['🍎','🐶','🚀','🌈','⚽','🎵','🐱','🍕','🌟','🐸','🎁','🎲'];
+let cards,flipped,lock,moves,pairs,el=document.getElementById('board');
+function reset(){moves=0;pairs=0;lock=false;flipped=[];
+ document.getElementById('moves').textContent=0;document.getElementById('pairs').textContent=0;document.getElementById('msg').textContent='';
+ cards=[...EMO,...EMO].map(v=>({v,id:Math.random()})).sort((a,b)=>a.id-b.id);
+ draw()}
+function draw(){el.innerHTML='';
+ cards.forEach((c,i)=>{const d=document.createElement('div');d.className='card';
+  if(flipped.includes(i)||c.done){d.classList.add(c.done?'done':'flip');d.textContent=c.v}
+  d.onclick=()=>pick(i);el.appendChild(d)})}
+function pick(i){if(lock||flipped.includes(i)||cards[i].done)return;
+ flipped.push(i);draw();
+ if(flipped.length===2){lock=true;moves++;document.getElementById('moves').textContent=moves;
+  const[a,b]=flipped;
+  setTimeout(()=>{
+   if(cards[a].v===cards[b].v){cards[a].done=cards[b].done=true;pairs++;document.getElementById('pairs').textContent=pairs;
+    if(pairs===12)document.getElementById('msg').textContent=`🎉 You win in ${moves} moves!`}
+   flipped=[];lock=false;draw()},650)}}
+reset();
+</script>
+</body>
+</html>
