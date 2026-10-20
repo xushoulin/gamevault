@@ -11,6 +11,8 @@ const adsenseClient =
   process.env.ADSENSE_CLIENT ??
   process.env.NEXT_PUBLIC_ADSENSE_CLIENT ??
   "ca-pub-2622415797490761";
+// GA4 measurement ID (public by design; server-rendered into <head>)
+const gaId = process.env.NEXT_PUBLIC_GA4_ID ?? "G-8ZXSFT1350";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -58,6 +60,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             crossOrigin="anonymous"
           />
         )}
+        {/* GA4 (gtag.js) rendered server-side */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${gaId}');`,
+          }}
+        />
       </head>
       <body className="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
         <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
