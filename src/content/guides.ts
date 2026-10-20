@@ -456,6 +456,476 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "obby-games-guide",
+    title: "Obby Games Explained: How to Beat Tower Obstacles Without Rage-Quitting",
+    gameSlug: "obby-rainbow-tower",
+    description:
+      "What obby games are and how to win them: checkpoint strategy, moving platform timing, icy tile footwork and the jump-delay trick most beginners miss.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "Obby — short for 'obstacle course' — is the most popular game format on the internet right now. Rainbow towers, lava floors, spinning bars: the formula is simple, the falls are brutal, and the satisfaction of reaching the top is why millions keep climbing. Obby Rainbow Tower packs the whole genre into one browser game, and these techniques apply to it and every obby you will ever play.",
+      },
+      { type: "h2", text: "1. Treat checkpoints like savings, not shame" },
+      {
+        type: "p",
+        text: "Every checkpoint you touch is progress the game cannot take away. Beginners rush past them to 'keep momentum' and pay for it with 10-minute restarts. The pro habit: slow down for one second on every checkpoint, confirm it activated, then commit fully to the next section knowing failure is now cheap.",
+      },
+      { type: "h2", text: "2. Watch moving platforms for one full cycle first" },
+      {
+        type: "p",
+        text: "Spinning lava bars and sliding platforms all repeat on a rhythm. Instead of jumping the moment you arrive, stand safe and watch one complete cycle — you will see the exact window you need. That one second of observation saves a dozen deaths, especially on multi-stage sections where the platforms desync.",
+      },
+      { type: "h2", text: "3. On icy tiles, commit — never halfway" },
+      {
+        type: "ul",
+        items: [
+          "Ice punishes hesitation: short taps make you slide unpredictably.",
+          "Aim your jump at where you will stop, not where you are.",
+          "If a slide starts, steer with small corrections and do not panic-jump mid-slide.",
+        ],
+      },
+      { type: "h2", text: "4. The jump-delay trick" },
+      {
+        type: "p",
+        text: "Most obby deaths are not missed jumps — they are early jumps. Waiting an extra beat after landing before your next jump keeps your character's momentum controlled, and on narrow beams it is the difference between a clean landing and a long fall. Slow is smooth, smooth is fast.",
+      },
+      { type: "h2", text: "5. Learn the fall, then use it" },
+      {
+        type: "p",
+        text: "When a section keeps killing you, watch your own death replay in your head: which platform failed, and was it timing or position? Adjust one variable per attempt — jump timing first, then landing spot, then route. One-change-at-a-time is how speedrunners learn sections ten times faster than button-mashers. Now put it into practice: play Obby Rainbow Tower free online and race to the top.",
+      },
+    ],
+  },
+  {
+    slug: "tiny-track-rally-tips",
+    title: "Tiny Track Rally Tips: Master Drifting and Nitro to Win Every Race",
+    gameSlug: "tiny-track-rally",
+    description:
+      "Win more races in Tiny Track Rally: the drift-then-boost combo, racing line basics, how to beat 7 AI rivals, and which of the 5 modes to practice first.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "Tiny Track Rally looks like a toy — colorful 3D cars, bouncy physics — but under the cuteness is a real arcade racer with drifting, nitro management and 7 rivals who do not give an inch. These five habits will take you from mid-pack to podium across all 10 tracks.",
+      },
+      { type: "h2", text: "1. Drift through corners, don't brake through them" },
+      {
+        type: "p",
+        text: "Braking kills your speed twice: once when you slow down, and again when you accelerate back up. Drifting keeps momentum through the turn and, in most arcade racers, charges your boost. The pattern is: enter wide, turn in early, drift through the apex, exit on the inside. If you hear tires squealing, you are doing it right.",
+      },
+      { type: "h2", text: "2. The drift-then-nitro combo" },
+      {
+        type: "ol",
+        items: [
+          "Drift through a corner to fill or earn your nitro.",
+          "Exit the corner first, straighten the car, then fire the nitro.",
+          "Never boost while turning — most of it sprays into the wall.",
+          "Save at least one nitro charge for the final straight of each lap.",
+        ],
+      },
+      { type: "h2", text: "3. Learn the racing line" },
+      {
+        type: "p",
+        text: "The fastest path on any track is not the shortest one — it is the straightest one: outside on entry, apex in the middle, inside on exit. Chasing this line alone is worth several positions per race, because the AI tends to take corners tight and slow in the middle.",
+      },
+      { type: "h2", text: "4. Use rivals as bumpers, carefully" },
+      {
+        type: "p",
+        text: "Toy-car physics make contact forgiving — a light bump into a rival's rear corner can push them wide without hurting your line. But full-speed rear-ending both cars lose speed. Nudge, don't ram.",
+      },
+      { type: "h2", text: "5. Practice Race mode before the rest" },
+      {
+        type: "p",
+        text: "The 5 modes share the same tracks, so master pure racing first: pick one short track, run it five times focusing only on the racing line, then five more focusing on drift-to-nitro timing. Skill transfers to every other mode; frustration from losing in Time Trial mode does not. Ready? Play Tiny Track Rally free online — 10 tracks, 5 modes, no download.",
+      },
+    ],
+  },
+  {
+    slug: "boo-chains-guide",
+    title: "Boo Chains Guide: Chain-Merge Rules and High-Score Strategy",
+    gameSlug: "boo-chains",
+    description:
+      "How to master chain-merge puzzles like Boo Chains: linking numbers, planning multi-link explosions, zone progression tactics and the one-move lookahead rule.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "Chain-merge puzzles — link tiles with equal or adjacent numbers, then pop them — are deceptively strategic. Boo Chains wraps the mechanic in cute Halloween monsters, but the scoring depth is real: one well-planned link can detonate a cascade that clears half the board. Here is how to think like a chain-builder.",
+      },
+      { type: "h2", text: "Understand the linking rule precisely" },
+      {
+        type: "p",
+        text: "You can connect monsters whose numbers are equal or exactly one apart, and the connection path matters — plan links through open space rather than weaving around blockers. Before every move, identify the longest legal chain on the board; length beats value because longer chains trigger bigger explosions.",
+      },
+      { type: "h2", text: "Always hunt the longest chain, not the easiest one" },
+      {
+        type: "ul",
+        items: [
+          "A 3-link of small numbers usually scores better than a 2-link of big numbers.",
+          "Scan the board in both directions — chains read differently vertically and horizontally.",
+          "Save big-number monsters for multi-link combos; popping them solo is a waste of ammo.",
+        ],
+      },
+      { type: "h2", text: "One-move lookahead: think in cascades" },
+      {
+        type: "p",
+        text: "When a chain explodes, monsters fall and new ones spawn — which often creates a fresh legal chain for free. Before committing, ask: after this chain pops, what will land where? Setting up a chain that triggers another chain (and another) is where huge scores come from. It is the same cascade thinking that powers 2048 endgames and Candy Crush combos.",
+      },
+      { type: "h2", text: "Zone progression: unlock, then farm" },
+      {
+        type: "p",
+        text: "Boo Chains spreads its levels across 5 spooky zones with free-the-monster objectives. When a level has a move limit, spend early moves on the objective pieces, not on score. And when you fail twice on a level, switch strategy: most stuck players keep repeating the same first move out of habit.",
+      },
+      { type: "h2", text: "Stay calm under the timer" },
+      {
+        type: "p",
+        text: "Timer pressure makes players grab the first visible 2-link and burn their board into scattered singles. Slow the first second down, find the longest chain available, and let that habit do the work. Practice it now: play Boo Chains free online and free every monster on the map.",
+      },
+    ],
+  },
+  {
+    slug: "idle-tycoon-games-tips",
+    title: "Idle Tycoon Games: 6 Rules to Progress 10x Faster",
+    gameSlug: "monster-cafe-idle-tycoon",
+    description:
+      "Idle and tycoon game strategy that actually compounds: upgrade order, the golden rule of income-per-second, offline earnings, and when to prestige.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "Idle tycoon games look passive, but the players who rocket through progression are making sharp active decisions with their money. Whether you are running Monster Café's haunted woods coffee shop or any other tycoon, the same six rules apply.",
+      },
+      { type: "h2", text: "1. Everything is income-per-second" },
+      {
+        type: "p",
+        text: "Every upgrade decision reduces to one question: how much does this raise my coins-per-second, and at what cost? Divide cost by gain — buy the best ratio, not the flashiest option. Players who upgrade randomly take five times longer to reach the same milestone.",
+      },
+      { type: "h2", text: "2. Buy many cheap upgrades before one expensive one" },
+      {
+        type: "p",
+        text: "Early on, ten small upgrades that each add 10% multiply out to +159%, while one big upgrade for the same money usually adds less. Cheap upgrades compound; expensive ones are for when the cheap ones get too pricey. Rebalance every few minutes.",
+      },
+      { type: "h2", text: "3. Serve the queue, don't let it stack" },
+      {
+        type: "p",
+        text: "In café and restaurant tycoons, waiting customers are wasted income — a queue that hits the exit timer is pure loss. When you play actively, prioritize anything that serves customers faster (staff, stations, speed) over cosmetic or storage upgrades. Passive income only accumulates after the service pipeline is smooth.",
+      },
+      { type: "h2", text: "4. Log in for offline earnings twice a day" },
+      {
+        type: "p",
+        text: "Most idle games pay you for time away — but the offline window is capped. Two short sessions (morning and evening) collect far more than one long gap. While you are there, reinvest 100% of the collected coins immediately; idle cash sitting in the bank earns nothing.",
+      },
+      { type: "h2", text: "5. Unlock new stations before maxing old ones" },
+      {
+        type: "p",
+        text: "The 5th level of an old station usually costs more than the 1st level of a brand-new station that pays more per customer. New content beats old levels almost every time — this is the single most common mistake in the genre.",
+      },
+      { type: "h2", text: "6. Check the goals panel first" },
+      {
+        type: "p",
+        text: "Quest and milestone rewards are handouts the game gives you for things you were doing anyway — always claim them and let them fund your next upgrade round. Ready to run the coziest haunted café on the internet? Play Monster Café: Idle Tycoon free online — slimes, ghosts and bat lattes await.",
+      },
+    ],
+  },
+  {
+    slug: "volleyball-games-online-tips",
+    title: "Volleyball Games Online: How to Win at 6v6 Pixel Volleyball",
+    gameSlug: "netherton-volleyball",
+    description:
+      "Browser volleyball strategy: serve timing, pass-set-spike rhythm, reading the block, and rotation basics to dominate Netherton Volleyball matches.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "Browser volleyball games compress real volleyball into taps and timing — and the real sport's strategy still applies. Netherton Volleyball puts you in charge of a whole 6v6 pixel squad, which means you are not just playing; you are coaching. These fundamentals win matches at any scale.",
+      },
+      { type: "h2", text: "Serving: consistency first, aces second" },
+      {
+        type: "p",
+        text: "A missed serve hands the point to your opponent — the worst trade in the game. Learn the timing window that lands serves in-bounds every time before hunting aces. Once consistent, aim serves at the weakest receiver or the seam between two players; pressure serves create bad passes, and bad passes are free points.",
+      },
+      { type: "h2", text: "Respect the pass-set-spike rhythm" },
+      {
+        type: "p",
+        text: "Beginner teams spike the first touch and donate the point to the block. Winning play follows the three-touch rhythm: pass (control), set (position), spike (kill). In browser volleyball this translates to tap timing — your first tap should calm the ball, your second should place it high and near the net, and only the third is aggressive.",
+      },
+      { type: "h2", text: "Read the block, hit around it" },
+      {
+        type: "ul",
+        items: [
+          "If opponents stack their block on one side, attack the open corner — placement beats power.",
+          "Tips and soft touches over a tall block work when the defense is set deep.",
+          "Vary your attacks: three spikes in a row trains the AI block to expect them.",
+        ],
+      },
+      { type: "h2", text: "Defense wins close matches" },
+      {
+        type: "p",
+        text: "Keep your formation balanced rather than stacking everyone at the net — digs from the back row turn opponent spikes into counterattacks. Watch the opposing hitter's approach angle; the ball goes where their body faces far more often than anywhere else.",
+      },
+      { type: "h2", text: "Manage momentum between points" },
+      {
+        type: "p",
+        text: "Volleyball runs in streaks: a couple of points either way swings confidence. After losing two points in a row, slow your next serve down and play one safe, controlled rally to stop the bleed. Now take the court: play Netherton Volleyball free online and call the shots for your pixel squad.",
+      },
+    ],
+  },
+  {
+    slug: "sorting-games-asmr-guide",
+    title: "Sorting Games Are the Internet's Favorite De-Stresser — How to Get Better",
+    gameSlug: "sort-master-satisfeel-asmr",
+    description:
+      "Why ASMR sorting puzzles relax your brain, plus practical tips: color-first sorting, corner anchoring, the two-touch rule and making every move satisfying.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "Sorting games have exploded for one reason: they are meditation with a scoreboard. The soft clicks, the tidy cabinets, the food sliding into perfect rows — your brain gets order and closure in small, constant doses. Sort Master: Satisfeel ASMR is the genre at its best, and a few techniques make it even more satisfying.",
+      },
+      { type: "h2", text: "Sort by category first, position second" },
+      {
+        type: "p",
+        text: "The amateur method is moving items one at a time wherever they fit. The clean method: decide the category zones first — all drinks left, all snacks right — then fill zones in passes. Deciding once and repeating is faster and calmer than re-deciding every item.",
+      },
+      { type: "h2", text: "Anchor the corners" },
+      {
+        type: "ul",
+        items: [
+          "Place the first item of each category at a fixed anchor point (a corner or edge).",
+          "Grow each category outward from its anchor instead of scattering.",
+          "Leave one empty buffer space where possible — it makes every future move smoother.",
+        ],
+      },
+      { type: "h2", text: "Use the two-touch rule" },
+      {
+        type: "p",
+        text: "Every item should ideally move once, to its final home. If you must make a temporary move, that is fine — but be conscious of it. Counting your touches turns a fidget session into a little optimization game, and the satisfaction of a near-perfect run is its own reward.",
+      },
+      { type: "h2", text: "Why it actually relaxes you" },
+      {
+        type: "p",
+        text: "Psychologists call it 'productive micro-accomplishment': small tasks with visible, immediate completion. Unlike email, a sorted shelf stays sorted. If you use sorting games to decompress, play in short sessions and let each finished level be the stopping point — that is where the stress-relief effect peaks.",
+      },
+      { type: "h2", text: "Chase flow, not speed" },
+      {
+        type: "p",
+        text: "The best sorting sessions feel like flow: hands moving, mind quiet. If you find yourself rushing and making sloppy placements, slow down — the game is a de-stresser, not a deadline. Get your fix: play Sort Master free online and enjoy the most satisfying cabinet on the internet.",
+      },
+    ],
+  },
+  {
+    slug: "3d-packing-puzzle-tips",
+    title: "3D Packing Puzzle Tips: Load Every Box Without Wasting Space",
+    gameSlug: "warehouse-tetris-3d",
+    description:
+      "Win at 3D packing puzzles like Warehouse Tetris 3D: rotate before you place, build flat layers, fill the corners first, and avoid the gap-death spiral.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "Packing puzzles are Tetris's calmer, smarter cousin: no timer, but real spatial reasoning. Warehouse Tetris 3D asks you to load boxes, crates and cargo into trucks and containers with minimal wasted space — and the players who pack tight all follow the same small set of habits.",
+      },
+      { type: "h2", text: "Rotate the piece in your head before moving it" },
+      {
+        type: "p",
+        text: "The most common mistake is dragging a piece to a spot and rotating after arrival, hoping it fits. Instead, decide the orientation first: look at the gap, imagine the piece's rotations, pick the best one, then place. One decision beats three attempts.",
+      },
+      { type: "h2", text: "Build in flat layers" },
+      {
+        type: "p",
+        text: "Think of the container as layers, like lasagna: complete one height level across the whole floor before starting the next. Towers and hills create overhangs, overhangs create unreachable cavities, and cavities are where packing runs die. Flat layers keep every future piece placeable.",
+      },
+      { type: "h2", text: "Fill corners and edges first" },
+      {
+        type: "ul",
+        items: [
+          "Corners are the hardest spaces to reach later — claim them early.",
+          "Long flat pieces hug walls and floors; save them for perimeter runs.",
+          "Leave irregular gaps for the small awkward pieces that come later.",
+        ],
+      },
+      { type: "h2", text: "Match shapes, not sizes" },
+      {
+        type: "p",
+        text: "A big square hole is not necessarily for the biggest piece — it is for whichever piece fits flush. An L-shaped gap wants an L-shaped piece. Train your eye to match silhouette first, volume second, and your packing density jumps immediately.",
+      },
+      { type: "h2", text: "Avoid the gap-death spiral" },
+      {
+        type: "p",
+        text: "One small gap is fine; four gaps that cannot combine into a piece shape is a dead board. If you notice two or more dead cavities forming, change strategy immediately: sacrifice tightness for a move that unifies the empty space into one usable region. Then keep loading: play Warehouse Tetris 3D free online and pack that truck like a pro.",
+      },
+    ],
+  },
+  {
+    slug: "archery-games-online-tips",
+    title: "Archery Games Online: Aim, Trajectory and Timing for Bow Masters",
+    gameSlug: "bow-or-die",
+    description:
+      "Sharpen your aim in browser archery games like Bow or Die: arrow drop compensation, leading moving targets, shot prioritization and staying calm in survival waves.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "Browser archery games look simple — aim, release, hit — but physics bows reward real projectile math: arrows drop, targets move, and panic wastes arrows. Bow or Die adds survival pressure to that physics, and these four skills keep you alive wave after wave.",
+      },
+      { type: "h2", text: "Compensate for arrow drop" },
+      {
+        type: "p",
+        text: "Arrows do not fly straight — they fall. The further the target, the higher you must aim above it. Build the habit of measuring distance first, then adjusting: close targets aim dead-on, mid-range aim a head above, long-range aim well over the target. Five minutes of deliberate practice burns this chart into muscle memory.",
+      },
+      { type: "h2", text: "Lead your moving targets" },
+      {
+        type: "p",
+        text: "Never aim at where a moving target is — aim at where it will be when the arrow arrives. Estimate the target's speed, multiply by arrow travel time, and aim into the gap. Against targets moving toward you, the correction is tiny; against fast crossers, aim a full body-length ahead.",
+      },
+      { type: "h2", text: "Prioritize targets like a tactician" },
+      {
+        type: "ul",
+        items: [
+          "Closest threat first — distance buys you time, proximity spends it.",
+          "Fast movers before slow tanks: speed is harder to replace than health.",
+          "Never double-tap a dying target while a fresh one closes in.",
+        ],
+      },
+      { type: "h2", text: "Breathe between shots" },
+      {
+        type: "p",
+        text: "Survival games induce spray-and-pray, and sprayed arrows are wasted arrows. The rhythm that works: one deliberate breath per shot, full draw, release on the exhale. Your accuracy under pressure is your calm under pressure — train the second and the first follows. Take up the bow: play Bow or Die free online and survive the waves.",
+      },
+    ],
+  },
+  {
+    slug: "best-free-racing-games-online",
+    title: "The Best Free Racing Games You Can Play in Your Browser Right Now",
+    description:
+      "The top free online racing games with no download — 3D kart racers, cartoon car chaos and drift-heavy arcade fun, all instant-play in your browser.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "You do not need a gaming PC or a 100 GB download to scratch the racing itch. A wave of polished HTML5 racing games runs instantly in any browser — on a work laptop, a school Chromebook, a phone. These are the best free ones on GameVault, no download and no signup.",
+      },
+      { type: "h2", text: "Tiny Track Rally — the all-rounder" },
+      {
+        type: "p",
+        text: "Colorful 3D toy-car racing with real arcade mechanics: drifting that charges nitro, 10 tracks, 5 modes and up to 7 AI rivals. If you only try one browser racer, make it this one — our drift and nitro guide will have you winning in an evening.",
+      },
+      { type: "h2", text: "Funny Cars Reload — the chaos pick" },
+      {
+        type: "p",
+        text: "Cartoon physics, ridiculous cars and tracks that fight back. Less simulation, more laughter-per-lap — perfect for quick sessions and playing against friends' scores.",
+      },
+      { type: "h2", text: "Why browser racing got good" },
+      {
+        type: "p",
+        text: "Modern WebGL puts console-style 3D rendering inside a browser tab, and HTML5 killed the need for plug-ins. The result: 3D racers with proper physics that load in seconds and run on anything. The gap between 'browser game' and 'real game' has basically closed.",
+      },
+      { type: "h2", text: "Tips for instant-play racing" },
+      {
+        type: "ul",
+        items: [
+          "Keyboard is king: arrows or WASD give finer control than most touchscreens.",
+          "Learn one track before chasing wins — track knowledge beats raw speed in arcade racers.",
+          "Drift, don't brake: momentum is the currency of arcade racing, and nitro is the payout.",
+          "Full-screen mode (if your browser offers it) makes a shocking difference in 3D racers.",
+        ],
+      },
+      { type: "h2", text: "More than racing" },
+      {
+        type: "p",
+        text: "GameVault also hosts racing-adjacent arcade hits and the classics: 2048, Tetris, Snake, Minesweeper and more — all free, all instant-play. Pick your car and hit the track: every game above is live on GameVault right now.",
+      },
+    ],
+  },
+  {
+    slug: "obby-toilet-line-guide",
+    title: "Obby Toilet Line Guide: Earn Coins Fast While You Wait",
+    gameSlug: "obby-toilet-line",
+    description:
+      "Obby Toilet Line mixes an idle queue with obby mini-games: how to earn coins faster, when to do the toilet runs, and balancing waiting income vs active play.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "Obby Toilet Line is a gloriously silly mashup: 30 characters waiting for a gas station restroom, passive income ticking while you wait, and obby-style mini-challenges that pay big when you actually get in. The strategy is balancing the two income streams. Here is how.",
+      },
+      { type: "h2", text: "Understand the two income engines" },
+      {
+        type: "p",
+        text: "Passive income ticks per waiting character — it rewards patience and upgrades. Active income comes from completing the toilet-run mini-games — it rewards skill and attention. The optimal loop is: start the queue, do active runs while it fills, return to collect and upgrade, repeat.",
+      },
+      { type: "h2", text: "Upgrade the queue before the runner" },
+      {
+        type: "ul",
+        items: [
+          "Queue capacity and per-character income compound even while you are idle.",
+          "Runner upgrades only pay while you are actively playing mini-games.",
+          "If you play in short sessions, weight upgrades toward the queue.",
+        ],
+      },
+      { type: "h2", text: "Do mini-game runs between waves, not during them" },
+      {
+        type: "p",
+        text: "Leaving the line mid-wave wastes the filling capacity. Time your active runs for the moment the queue is full or the income rate flattens — that is when your attention is worth more inside the mini-game than in the line.",
+      },
+      { type: "h2", text: "Learn the obby basics they reuse" },
+      {
+        type: "p",
+        text: "The toilet runs use standard obby platforming: moving platforms, tight beams, timing windows. Watch one full platform cycle before jumping, and commit to jumps fully — half-jumps are how you lose run streaks. Our obby games guide covers the full technique set.",
+      },
+      { type: "h2", text: "Spend coins the moment you can afford the next tier" },
+      {
+        type: "p",
+        text: "Idle games punish hoarding — coins in your pocket earn nothing. Keep your balance low and your income-per-second high, and the whole game snowballs. Get in line: play Obby Toilet Line free online — no download, no signup, absurd humor included.",
+      },
+    ],
+  },
+  {
+    slug: "darkhood-guide",
+    title: "DarkHood Survival Guide: Light Management and Monster Evasion",
+    gameSlug: "darkhood",
+    description:
+      "Survive DarkHood's candle-lit caves: how the light radius works, sneaking past sleeping monsters, route planning in the dark, and when to run instead of sneak.",
+    date: "2026-10-20",
+    blocks: [
+      {
+        type: "p",
+        text: "DarkHood is an atmospheric stealth-exploration game: a boy in a dark hoodie, caves lit only by your own aura, monsters sleeping in the blackness. The light is both your vision and your tell — and learning to manage it is the whole game. Here is the survival kit.",
+      },
+      { type: "h2", text: "Respect the light radius" },
+      {
+        type: "p",
+        text: "Your aura reveals the map but also announces you. Monsters wake when your light reaches them — so your vision distance is effectively your danger distance. The core skill: move at the edge of illumination, peeking into darkness briefly rather than flooding every room with light.",
+      },
+      { type: "h2", text: "Learn the sleep states" },
+      {
+        type: "ul",
+        items: [
+          "Deep-sleeping monsters have a wide safe zone — you can pass close if you move slowly.",
+          "Light-sleepers twitch periodically; freeze during twitches and move between them.",
+          "If a monster's eyes open, do not run immediately — often stopping still re-triggers sleep faster.",
+        ],
+      },
+      { type: "h2", text: "Plan routes with partial information" },
+      {
+        type: "p",
+        text: "In dark caves you cannot see the whole route — so commit to a direction for several seconds before reassessing. Constant dithering keeps you in danger zones longer. Peek, decide, commit, adapt: the same loop that makes dark-souls-style exploration survivable.",
+      },
+      { type: "h2", text: "Memorize the safe pockets" },
+      {
+        type: "p",
+        text: "Every cave section has alcoves and corners where no monster path reaches. On your first pass, note two or three of these per screen; they are your fallback when a wake-up goes wrong. Veteran players cross dangerous rooms by hopping pocket to pocket instead of sneaking one long line.",
+      },
+      { type: "h2", text: "When to run: the exit math" },
+      {
+        type: "p",
+        text: "If the exit is closer than the monster's reach — run. Sneaking past an alerted monster is a coin flip; a straight sprint to a known exit is not. Save your courage for the moments it pays. Step into the dark: play DarkHood free online and light your own way.",
+      },
+    ],
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | null {
