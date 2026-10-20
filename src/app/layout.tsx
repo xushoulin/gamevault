@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import AdSenseScript from "@/components/AdSenseScript";
+import { getSiteUrl } from "@/lib/site";
 
-const siteUrl = process.env.SITE_URL ?? "http://localhost:3000";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
