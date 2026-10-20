@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllGames, getCategories } from "@/lib/queries";
+import { guides } from "@/content/guides";
 import { getSiteUrl } from "@/lib/site";
 
 const siteUrl = getSiteUrl();
@@ -20,6 +21,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${siteUrl}/game/${g.slug}`,
       changeFrequency: "weekly" as const,
       priority: 0.7,
+    })),
+    { url: `${siteUrl}/guides`, changeFrequency: "weekly" as const, priority: 0.8 },
+    ...guides.map((g) => ({
+      url: `${siteUrl}/guides/${g.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
     { url: `${siteUrl}/about`, changeFrequency: "monthly", priority: 0.3 },
     { url: `${siteUrl}/privacy`, changeFrequency: "monthly", priority: 0.3 },

@@ -85,6 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="max-w-6xl mx-auto px-4 py-6 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p>© {new Date().getFullYear()} GameVault — Free online games. Play instantly, no download.</p>
             <nav aria-label="Footer" className="flex gap-4">
+              <Link href="/guides" className="hover:text-violet-700">Guides</Link>
               <Link href="/about" className="hover:text-violet-700">About</Link>
               <Link href="/privacy" className="hover:text-violet-700">Privacy Policy</Link>
               <Link href="/sitemap.xml" className="hover:text-violet-700">Sitemap</Link>

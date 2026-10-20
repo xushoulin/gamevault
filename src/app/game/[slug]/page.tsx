@@ -5,6 +5,7 @@ import GameFrame from "@/components/GameFrame";
 import GameCard from "@/components/GameCard";
 import AdBanner from "@/components/AdBanner";
 import { getGameBySlug, getRelatedGames, getAllGames } from "@/lib/queries";
+import { getGuidesByGame } from "@/content/guides";
 
 export const revalidate = 600;
 
@@ -128,6 +129,20 @@ export default async function GamePage({ params }: { params: Promise<{ slug: str
         {/* Sidebar */}
         <aside className="lg:w-[300px] shrink-0 space-y-5">
           <AdBanner format="sidebar" className="mx-auto" />
+          {getGuidesByGame(game.slug).length > 0 && (
+            <section className="rounded-xl bg-white border border-slate-200 p-5">
+              <h2 className="text-lg font-bold mb-2">{game.title} Strategy</h2>
+              <ul className="space-y-2">
+                {getGuidesByGame(game.slug).map((g) => (
+                  <li key={g.slug}>
+                    <Link href={`/guides/${g.slug}`} className="text-sm text-violet-700 hover:underline font-medium">
+                      {g.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
           <section>
             <h2 className="text-lg font-bold mb-3">Related Games</h2>
             <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
