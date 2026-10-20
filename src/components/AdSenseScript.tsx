@@ -3,15 +3,16 @@
 import Script from "next/script";
 
 /**
- * Loads the AdSense library only when ads are enabled via env,
- * so the site stays fast before approval. Set:
- *   NEXT_PUBLIC_ADSENSE_ENABLED=1
- *   NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-2622415797490761
+ * AdSense library loader.
+ * - Loads whenever NEXT_PUBLIC_ADSENSE_CLIENT is set (required for the
+ *   AdSense site-review crawler to detect the code; the bare loader
+ *   renders no ads by itself).
+ * - Actual <ins> ad units only render when NEXT_PUBLIC_ADSENSE_ENABLED=1
+ *   (set after approval, see AdBanner).
  */
 export default function AdSenseScript() {
   const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
-  const enabled = process.env.NEXT_PUBLIC_ADSENSE_ENABLED === "1" && !!client;
-  if (!enabled || !client) return null;
+  if (!client) return null;
   return (
     <Script
       async
