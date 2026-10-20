@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-import AdSenseScript from "@/components/AdSenseScript";
 import { getSiteUrl } from "@/lib/site";
 
 const siteUrl = getSiteUrl();
+const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -43,8 +43,17 @@ const navCategories = [
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* AdSense loader rendered server-side so it appears in raw HTML (required for AdSense site association & review) */}
+        {adsenseClient && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
+            crossOrigin="anonymous"
+          />
+        )}
+      </head>
       <body className="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
-        <AdSenseScript />
         <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
           <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
             <Link href="/" className="text-xl font-extrabold tracking-tight text-violet-700 shrink-0">
