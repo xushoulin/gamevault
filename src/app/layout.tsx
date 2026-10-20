@@ -4,7 +4,9 @@ import "./globals.css";
 import { getSiteUrl } from "@/lib/site";
 
 const siteUrl = getSiteUrl();
-const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+// Publisher ID is public by design (it appears in every page's ad script);
+// env var can override but a hardcoded default guarantees the loader renders.
+const adsenseClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "ca-pub-2622415797490761";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
