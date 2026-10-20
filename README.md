@@ -25,7 +25,7 @@ npm run build && npm start # 生产构建
 1. GitHub 建仓并推送本目录
 2. Vercel 导入仓库，设置环境变量：
    - `DATABASE_URL` = Neon 连接串（见 .env.local）
-   - `NEXT_PUBLIC_SITE_URL` = 正式域名（如 `https://www.yourdomain.com`）
+   - `SITE_URL` = 正式域名（如 `https://www.yourdomain.com`，服务端专用，无 NEXT_PUBLIC 前缀）
    - `NEXT_PUBLIC_ADSENSE_CLIENT` = `ca-pub-2622415797490761`
    - `NEXT_PUBLIC_ADSENSE_ENABLED` = `1`（AdSense 审核通过后开启；审核期保持留空显示占位符）
 3. 绑定域名，部署完成后到 GSC 提交 `https://域名/sitemap.xml`

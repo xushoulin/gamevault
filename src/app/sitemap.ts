@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllGames, getCategories } from "@/lib/queries";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.SITE_URL ?? "http://localhost:3000";
 
 export const revalidate = 3600;
 
