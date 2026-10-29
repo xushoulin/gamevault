@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllGames, getCategories } from "@/lib/queries";
+import { getFeaturedGames, getCategories } from "@/lib/queries";
 import { guides } from "@/content/guides";
 import { getSiteUrl } from "@/lib/site";
 
@@ -8,7 +8,7 @@ const siteUrl = getSiteUrl();
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [games, categories] = await Promise.all([getAllGames(), getCategories()]);
+  const [games, categories] = await Promise.all([getFeaturedGames(), getCategories()]);
 
   return [
     { url: siteUrl, changeFrequency: "daily", priority: 1 },

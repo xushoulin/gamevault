@@ -19,6 +19,7 @@ export type Game = {
   description: string;
   instructions: string;
   plays: number;
+  featured: boolean;
   category_slug?: string;
   category_name?: string;
 };
@@ -40,8 +41,17 @@ export async function getGamesByCategory(slug: string): Promise<Game[]> {
     `SELECT g.*, c.slug AS category_slug, c.name AS category_name
      FROM gq_games g JOIN gq_categories c ON c.id = g.category_id
      WHERE c.slug = $1 AND g.published = true
-     ORDER BY g.id`,
+     ORDER BY g.featured DESC, g.id`,
     [slug]
+  );
+}
+
+export async function getFeaturedGames(): Promise<Game[]> {
+  return query<Game>(
+    `SELECT g.*, c.slug AS category_slug, c.name AS category_name
+     FROM gq_games g JOIN gq_categories c ON c.id = g.category_id
+     WHERE g.published = true AND g.featured = true
+     ORDER BY g.id`
   );
 }
 
@@ -68,7 +78,7 @@ export async function getPopularGames(limit = 8): Promise<Game[]> {
   return query<Game>(
     `SELECT g.*, c.slug AS category_slug, c.name AS category_name
      FROM gq_games g JOIN gq_categories c ON c.id = g.category_id
-     WHERE g.published = true
+     WHERE g.published = true AND g.featured = true
      ORDER BY g.plays DESC, g.id ASC
      LIMIT $1`,
     [limit]

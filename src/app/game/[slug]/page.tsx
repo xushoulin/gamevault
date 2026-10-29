@@ -26,6 +26,9 @@ export async function generateMetadata({
     title: `${game.title} — Play Free Online, No Download`,
     description: game.description.slice(0, 155),
     alternates: { canonical: `/game/${game.slug}` },
+    // Games without original copy are playable but kept out of search indexes
+    // to avoid thin/duplicate content (AdSense & SEO quality).
+    ...(game.featured ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       title: `${game.title} — Play Free Online | GameVault`,
       description: game.description.slice(0, 155),
