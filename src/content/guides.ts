@@ -926,6 +926,148 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "block-blast-tips",
+    title: "Block Blast Tips: 8 Strategies to Clear More Lines and Score Higher",
+    gameSlug: "blockblast",
+    description:
+      "Block Blast strategy that actually works: keep escape lanes open, plan around all three shapes, use the board edges, and when to chase combos instead of safe clears.",
+    date: "2026-10-30",
+    blocks: [
+      {
+        type: "p",
+        text: "Block Blast looks like a casual filler game, and that is exactly why most players plateau early. Under the wooden-skin calm sits a real spatial puzzle: three shapes at a time, no rotation tricks, and a game over that arrives the moment the board has no room left. These eight habits separate 5,000-point players from 50,000-point players.",
+      },
+      { type: "h2", text: "1. Play all three shapes in your head before placing one" },
+      {
+        type: "p",
+        text: "Beginners optimize the shape in hand. Strong players ask: after I place this piece, can the other two still fit somewhere? If a placement strands you with three long bars and no room for any of them, it was the wrong placement — even if it cleared a line. The board is a resource; spend it on keeping options alive.",
+      },
+      { type: "h2", text: "2. Never build without an escape lane" },
+      {
+        type: "p",
+        text: "Keep at least one full row or column's worth of space open at all times — a lane where a 5-long bar could land if it appears. The single most common death in Block Blast is having no home for a long piece. If your board cannot accept the worst-case shape, you are one bad draw from ending the run.",
+      },
+      { type: "h2", text: "3. Clear on the edges, build in the middle" },
+      {
+        type: "p",
+        text: "Placements that touch two walls are cheap; placements that fragment the center are expensive. Push your clusters toward the edges and corners so the flexible middle stays open. Corners are the graveyard of unplaceable pieces — fill them early, while the shapes that fit them are still on offer.",
+      },
+      { type: "h2", text: "4. Holes are debt with interest" },
+      {
+        type: "p",
+        text: "Every single-cell gap you leave costs you more than it looks: it blocks the big shapes that would score fastest, and clearing it later usually means sacrificing a placement you needed. Only accept a hole when it buys a line clear now — and clear that debt within the next few moves.",
+      },
+      { type: "h2", text: "5. Combos: chase them, but with an exit plan" },
+      {
+        type: "p",
+        text: "Consecutive clears multiply your score, so when a combo starts, it is worth accepting slightly messy placements to keep it alive. But decide in advance how many risky moves you will allow — combo greed with no exit plan is the second most common way strong runs die.",
+      },
+      { type: "h2", text: "6. Spend awkward shapes immediately" },
+      {
+        type: "p",
+        text: "The moment an awkward piece appears — the S-curl, the fat 3x3 corner — find it a home now, while the board still has room. Awkward shapes never get easier to place; they only get worse as the board fills. Flexible shapes (bars, Ls) can wait. Rigid ones cannot.",
+      },
+      { type: "h2", text: "7. Keep one quadrant 'liquid'" },
+      {
+        type: "p",
+        text: "Try to hold one roughly empty 4x4 region as your shock absorber. When a brutal set of three shapes arrives, that liquid space absorbs all of them. Runs end not when the board is full, but when the board is full and fragmented — a liquid quadrant prevents both.",
+      },
+      { type: "h2", text: "8. Score is survivorship" },
+      {
+        type: "p",
+        text: "There is no bonus for dying beautifully. A boring placement that keeps the game alive beats a clever one that ends it. Your high score is a function of how long you can keep placing pieces — so make survivability the filter for every decision. Ready to apply it? Play Block Blast free online, no download needed.",
+      },
+    ],
+  },
+  {
+    slug: "8-ball-pool-tips",
+    title: "8 Ball Pool Tips: Aim, Power and Position Like a Table Regular",
+    gameSlug: "8-ball-pool-2d",
+    description:
+      "Practical 8 Ball Pool strategy: ghost-ball aiming, cue-ball control, break technique, safety play and the 8-ball rules most casual players get wrong.",
+    date: "2026-10-30",
+    blocks: [
+      {
+        type: "p",
+        text: "Most casual 8-ball players lose for the same three reasons: they aim at balls instead of positions, they hit everything at one speed, and they have never deliberately played safe. Fix those and you will beat the vast majority of online opponents — no trick shots required.",
+      },
+      { type: "h2", text: "Aim the cue ball, not the object ball" },
+      {
+        type: "p",
+        text: "The mental shift that improves beginners fastest: for every shot, picture where the cue ball must strike the object ball — the 'ghost ball' position sitting right on the line between object ball and pocket. If your aim point on the ghost ball is correct, the rest is physics. Practicing this one visualization fixes more misses than any aiming system.",
+      },
+      { type: "h2", text: "The break sets the table" },
+      {
+        type: "p",
+        text: "Hit the break firmly and slightly off-center on the head ball, with a touch of draw to pull the cue ball back toward the middle of the table. A full-power break scatters clusters but often leaves nothing playable; a controlled break spreads just enough to give you a clean first shot. On an open table, the player who runs the first three balls usually runs the rack.",
+      },
+      { type: "h2", text: "Think one ball ahead, always" },
+      {
+        type: "p",
+        text: "Before any shot, decide where the cue ball should stop to make the next ball easy. Soft-to-medium pace gives you control; smashing balls in leaves the cue ball to chance. The pros' secret is boring: almost every shot is played at the slowest speed that gets the job done and lands position.",
+      },
+      { type: "h2", text: "Learn the two safety shots everyone can play" },
+      {
+        type: "p",
+        text: "When no pot is on, do not just poke at something. Safety one: hide the cue ball behind a cluster so your opponent has no direct hit. Safety two: tap your own ball gently against a rail and leave the cue ball frozen to the opposite rail. Giving up the table on your terms is how you win racks you have no business winning.",
+      },
+      { type: "h2", text: "Respect the 8-ball rules that decide games" },
+      {
+        type: "p",
+        text: "Three rule details settle most online matches: potting the 8 on the break can win instantly in many rule sets; you must always contact your lowest group ball first; and pocketing the 8 with a foul — or scratching on the 8 — loses the game. Before your final shot, slow down and confirm the cue ball's path. More games are thrown on the 8 than won on it.",
+      },
+      { type: "h2", text: "Practice routine that actually transfers" },
+      {
+        type: "p",
+        text: "Ten minutes of straight-in potting from increasing distances, ten minutes of positioning the cue ball on a designated spot after each pot, and five deliberate safeties. That is a better hour than a hundred mindless racks. Put it to work: play 8 Ball Pool 2D free online right in your browser.",
+      },
+    ],
+  },
+  {
+    slug: "bubble-shooter-strategy",
+    title: "Bubble Shooter Strategy: Bank Shots, Color Discipline and Ceiling Planning",
+    gameSlug: "bubble-rush",
+    description:
+      "Get better at bubble shooters: when to bank off walls, which colors to feed, how to plan ceiling drops, and the hanging-cluster trick that clears whole sections.",
+    date: "2026-10-30",
+    blocks: [
+      {
+        type: "p",
+        text: "Bubble shooters are the most-played casual genre on the internet, and also the most-played-on-autopilot. The difference between popping bubbles randomly and playing with intent is enormous — a few habits will roughly double how far you get on the same skill.",
+      },
+      { type: "h2", text: "Bank shots are the whole skill tree" },
+      {
+        type: "p",
+        text: "Direct shots only reach what is in front of you. Banked shots — fired at the side wall to rebound into clusters you cannot see cleanly — unlock the real game. Spend your first sessions doing nothing but banking: aim at the reflection point as if the wall were a mirror. Once bank angles feel natural, difficult levels stop being difficult.",
+      },
+      { type: "h2", text: "Feed the colors you are rich in" },
+      {
+        type: "p",
+        text: "The shooter holds two bubbles: current and next. Good players plan two shots deep — if the next bubble matches a cluster you are setting up, take the low-value shot now and save the match. Never waste a needed color on a pointless pop; every bubble in the chamber is a resource.",
+      },
+      { type: "h2", text: "Cut clusters loose, do not shave them" },
+      {
+        type: "p",
+        text: "The scoring engine of every bubble shooter is the drop: pop the two or three bubbles connecting a big cluster to the ceiling and everything hanging below falls free for massive points. So scan the ceiling constantly and ask which single connection bubble, if popped, drops the most. One well-placed bank shot that cuts a cluster loose beats ten direct pops.",
+      },
+      { type: "h2", text: "Keep the ceiling flat" },
+      {
+        type: "p",
+        text: "A jagged ceiling with deep overhangs hides your bank angles and creates stranded islands. When you have a free choice, pop the protruding bubbles that stick down into your space. A flat ceiling means every bubble is reachable — which means every cluster is cuttable.",
+      },
+      { type: "h2", text: "Manage the pressure, not just the bubbles" },
+      {
+        type: "p",
+        text: "In levels where the ceiling descends or bubbles advance, every missed shot moves the deadline closer. That changes the math: early on, take the extra second to find the cut shot; late and desperate, take the safe direct pop that keeps the row from crossing the line. Knowing which mode you are in — builder or firefighter — is the real decision.",
+      },
+      { type: "h2", text: "One habit to rule them all" },
+      {
+        type: "p",
+        text: "Before every shot, spend two seconds answering: what does this shot set up? Bubble shooters reward players who play the shot after this one. Load up Bubble Rush and try it — bank first, cut clusters loose, and watch your clears stack up.",
+      },
+    ],
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | null {
