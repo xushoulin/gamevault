@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     siteName: "GameVault",
     url: siteUrl,
   },
+  alternates: { canonical: "/" },
   robots: { index: true, follow: true },
 };
 
