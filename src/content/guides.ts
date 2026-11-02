@@ -1068,6 +1068,589 @@ export const guides: Guide[] = [
       },
     ],
   },
+  {
+    slug: "pocketgolf-putting-guide",
+    title: "PocketGolf Guide: Read the Angle Before You Swing for Power",
+    gameSlug: "pocketgolf",
+    description:
+      "How to lower your PocketGolf scores: aiming with angles instead of power, using walls as allies, and the two-putt rule that saves strokes on every hole.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Miniature golf games punish the same mistake over and over: players pull back too far and hope. PocketGolf rewards the opposite instinct. Almost every hole in the game is solvable with a medium-paced shot if you pick the right line, and the walls are not obstacles — they are tools. This guide covers the three habits that turn triple-bogey holes into pars.",
+      },
+      { type: "h2", text: "Habit 1: Trace the full line before your first putt" },
+      {
+        type: "p",
+        text: "Before you touch the ball, follow the path you intend to take from tee to cup, including every bounce. Beginners putt toward whatever is directly in front of them and adjust later; that is how a two-shot hole becomes five. Ten seconds of tracing saves more strokes than any amount of power control.",
+      },
+      { type: "h2", text: "Habit 2: Use walls at 45 degrees" },
+      {
+        type: "p",
+        text: "A bank shot into a wall sends the ball off at a mirrored angle. The sweet spot is roughly a 45-degree approach — shallow angles skid along the wall forever, steep angles kill all your momentum. When a cup sits around a corner, look for the wall opposite it and aim at the midpoint. This one trick solves most of the game's corner holes.",
+      },
+      { type: "h2", text: "Habit 3: The two-putt rule" },
+      {
+        type: "p",
+        text: "If you cannot see a clean line to the cup, do not force one. Instead, putt to a spot from which the cup is clearly reachable — a flat area with no obstacles between you and the hole. Two calm, easy putts beat one heroic shot and three recovery shots._reserve the full-power swing for holes where you have already traced an unobstructed line.",
+      },
+      { type: "h2", text: "Practice drill" },
+      {
+        type: "p",
+        text: "Pick any five-hole stretch and play it twice: once going for the cup directly, once using only bank shots and two-putt logic. Most players score better on the second round immediately, and the gap closes as the habits stick. Load up PocketGolf and give it a run.",
+      },
+    ],
+  },
+  {
+    slug: "euro-truck-parking-reverse-guide",
+    title: "Euro Truck Parking: How to Reverse a Trailer Without Losing Your Mind",
+    gameSlug: "euro-truck-parking",
+    description:
+      "A practical guide to Euro Truck Parking: why trailers steer backwards, how to use the mirror camera, and a three-step routine for every parking bay.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Euro Truck Parking looks like a driving game, but the moment you try to reverse into a bay it reveals itself as a physics puzzle. The trailer does not follow the cab — it argues with it. Once you understand one rule, the whole game opens up: to move the trailer's rear to the left, you steer the cab to the right while reversing. Everything else is patience.",
+      },
+      { type: "h2", text: "The golden rule of trailers" },
+      {
+        type: "p",
+        text: "When reversing, the trailer pivots around its own rear axle, and your steering input does the opposite of what a car would do. New players fight this and jackknife within seconds. Instead, make small steering corrections and watch the angle between cab and trailer — your goal is keeping that angle small. A big angle means you have lost the geometry and need to pull forward to reset.",
+      },
+      { type: "h2", text: "Use the camera, not the windshield" },
+      {
+        type: "p",
+        text: "The game gives you camera angles for a reason. Before every maneuver, cycle to the rear-facing view and look at the bay from the trailer's perspective. Line up your approach so the bay entrance is slightly on your mirror side — reversing into a bay you can see beats guessing at one you cannot.",
+      },
+      { type: "ol", items: [
+        "Drive past the bay and stop when your cab is roughly half a truck-length beyond it.",
+        "Angle the cab away from the bay about 30 degrees, then begin reversing slowly.",
+        "Steer opposite to the direction the trailer needs to swing, making tiny corrections.",
+        "Straighten cab and trailer before the final half-meter, then creep in.",
+      ] },
+      { type: "h2", text: "Don't rush the last meter" },
+      {
+        type: "p",
+        text: "Almost every collision in this game happens in the final half-meter, when the trailer is nearly in and the driver relaxes. Treat the last stretch as the slowest part of the whole maneuver. One clean park with zero scrapes is worth more points than three fast attempts with two crashed doors. Take it into the next lot in Euro Truck Parking and prove it to yourself.",
+      },
+    ],
+  },
+  {
+    slug: "spooky-racing-drift-guide",
+    title: "Spooky Racing: Drift Basics and Item Strategy for the Haunted Cups",
+    gameSlug: "spooky-racing",
+    description:
+      "Win more races in Spooky Racing: how drifting charges boost, when to fire items, and the corner types where most players lose the lead.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Spooky Racing borrows the best loop from kart racers — drift through corners to charge boost, use items to defend or attack — and wraps it in a Halloween skin that never takes itself too seriously. The problem is that most players either drift everything or nothing. This guide splits the difference.",
+      },
+      { type: "h2", text: "Drift the long corners, grip the short ones" },
+      {
+        type: "p",
+        text: "Drifting costs a little speed and pays you back in boost, so it only makes sense when the corner is long enough to earn the charge. Long sweeping bends are drift territory: enter wide, cut to the inside, hold the drift until the exit is straight. Hairpins and quick chicanes are usually faster with a clean brake-and-grip line — drifting there just scrubs speed and gives you nothing back.",
+      },
+      { type: "h2", text: "Items: hold your defense until the last straight" },
+      {
+        type: "p",
+        text: "The most common item mistake is firing the moment you pick something up. An item in your slot is a threat; an item already used is a memory. If you are in first, keep a defensive item for the final straight, where every rival's comeback attempt funnels into one lane. If you are chasing, save your projectiles for short straights where the leader cannot dodge.",
+      },
+      { type: "h2", text: "Where races are actually lost" },
+      {
+        type: "ul", items: [
+          "The corner right after an item box cluster — everyone grabs and panics.",
+          "Any bend with a pumpkin or hazard on the inside apex — the shortcut is bait.",
+          "The penultimate corner — overcooking it here hands the win to whoever braked once.",
+        ] },
+      { type: "p",
+        text: "Master those three trouble spots and the haunted cups stop being chaotic. Fire up Spooky Racing, pick your kart, and try holding one defensive item for an entire race — the difference is immediately obvious.",
+      },
+    ],
+  },
+  {
+    slug: "stickman-bow-clash-archery-guide",
+    title: "Stickman Bow Clash: Master the Arc, Win the Duel",
+    gameSlug: "stickman-bow-clash",
+    description:
+      "A Stickman Bow Clash guide on reading distance, leading moving targets, and the 45-degree rule that wins most archery duels.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Archery duels in Stickman Bow Clash come down to one skill: converting distance into arc. Your arrow does not fly straight — it falls — and the player who internalizes that fact first wins most matches before the second exchange. This guide turns that fact into a routine you can repeat under pressure.",
+      },
+      { type: "h2", text: "The 45-degree reference" },
+      {
+        type: "p",
+        text: "For maximum range, arrows fly farthest at a 45-degree angle. Use it as your mental ruler: at maximum distance, draw near 45 degrees; at half distance, flatten toward 25; up close, aim nearly flat and let draw power do the work. You will miss your first few shots calibrating — that is fine, because the misses teach you the scale faster than any explanation.",
+      },
+      { type: "h2", text: "Lead the moving target" },
+      {
+        type: "p",
+        text: "A jumping or strafing stickman is not where you see them — they are where they are going. Aim one stickman-width ahead of their movement direction, slightly more if they are sprinting. The classic trap is tracking the target with your bow while drawing; instead, fix your aim at the lead point and time the release to their rhythm. Most players jump in a predictable loop; count it.",
+      },
+      { type: "h2", text: "Duel economy" },
+      {
+        type: "ul", items: [
+          "Your first shot is a measurement, not a kill attempt — learn the range.",
+          "After a hit, opponents rush; that is the best moment for a flat quick-shot.",
+          "If both fighters are at long range, high arcs are safe; if they close distance, switch early to flat shots.",
+        ] },
+      {
+        type: "p",
+        text: "Run a few duels in Stickman Bow Clash with this routine — measure, lead, punish — and you will start winning exchanges you used to lose. The ragdoll knockouts are a bonus.",
+      },
+    ],
+  },
+  {
+    slug: "sniper-shooter-3d-aim-guide",
+    title: "Sniper Shooter 3D: Breath, Timing and Target Discipline",
+    gameSlug: "sniper-shooter-3d",
+    description:
+      "How to shoot like a marksman in Sniper Shooter 3D: identifying the right target, timing the steadiness bar, and why patience beats speed in every mission.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Sniper Shooter 3D is not a reflex game. It is a patience game wearing a reflex costume. The mechanics are simple — aim, zoom, fire — but the missions are built to punish shooting at the wrong moment or, worse, the wrong person. This guide covers the discipline that separates clean missions from restarts.",
+      },
+      { type: "h2", text: "Identify before you engage" },
+      {
+        type: "p",
+        text: "Every mission gives you an objective, and the levels are populated with people who are not your target. Zoom out, scan the whole scene, and confirm your target's position and behavior before you settle on them. Shooting a civilian or missing the mission's actual condition ends the run instantly — and it is always avoidable with five more seconds of looking.",
+      },
+      { type: "h2", text: "Fire inside the steadiness window" },
+      {
+        type: "p",
+        text: "Your aim sways, and every scope has a window where the reticle settles. The amateur habit is to fire the instant the target lines up; the marksman habit is to wait for the sway's natural pause, then fire within it. If your steadiness is drifting out of the window, release the zoom, breathe, and re-settle. A lost second costs nothing; a rushed shot costs the mission.",
+      },
+      { type: "h2", text: "One shot, one scene change" },
+      {
+        type: "p",
+        text: "Assume every shot changes the situation: guards look around, targets run, civilians scatter. Before firing, decide what your second shot will be if the first fails. Players who plan the follow-up stay calm when things move; players who don't panic-zoom and miss again. That is the whole secret. Take it into Sniper Shooter 3D and run the first three missions clean.",
+      },
+    ],
+  },
+  {
+    slug: "thief-puzzle-timing-guide",
+    title: "Thief Puzzle: Stretchy Arm Routes and Guard Timing",
+    gameSlug: "thief-puzzle-long-hand-game",
+    description:
+      "A Thief Puzzle guide on planning your stretchy-arm path, reading guard patrol loops, and the grab-timing trick for levels that seem impossible.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Thief Puzzle hands you an absurdly stretchable arm and a series of guards who would very much like you to keep it short. The comedy hides a real puzzle game: every level is a routing problem, and every guard is a timing problem. Failures are loud and funny, which is good — you will have a few before the routes click.",
+      },
+      { type: "h2", text: "Plan the return trip, not just the grab" },
+      {
+        type: "p",
+        text: "Beginners plan a path to the loot and forget the arm has to come back the same way. Before extending, check the entire corridor your arm will occupy — including the return journey. If a laser or a sleeping dog's head sits anywhere along that line, the route is dead no matter how clean the grab looks.",
+      },
+      { type: "h2", text: "Guards loop, and loops have gaps" },
+      {
+        type: "p",
+        text: "Watch any moving guard for one full cycle before acting. Their patrol is a loop with a predictable dead zone — a moment when they look away or walk to the far end of their path. Your grab window is that gap, not the guard's position. Extending during the gap and retracting before the loop completes is the whole game; everything else is just funny failure animations.",
+      },
+      { type: "h2", text: "When a level feels impossible" },
+      {
+        type: "ul", items: [
+          "You are probably grabbing too early — wait one extra loop cycle.",
+          "Check whether an object can be used as cover mid-route.",
+          "Try approaching the loot from the opposite side; arms bend more than you think.",
+        ] },
+      {
+        type: "p",
+        text: "Patience converts nearly every stuck level into a routine grab. Stretch out in Thief Puzzle and put the loop-watching to work.",
+      },
+    ],
+  },
+  {
+    slug: "screw-nuts-order-guide",
+    title: "Screw Nuts Snap Puzzle: The Unscrewing Order That Unlocks Everything",
+    gameSlug: "screw-nuts-snap-puzzle",
+    description:
+      "Why screw order matters more than speed in Screw Nuts Snap Puzzle, plus a layer-by-layer method for the tangled late-game plates.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Screw Nuts Snap Puzzle belongs to the wonderfully satisfying unscrewing genre: plates held down by crossed screws, a tray of empty holes, and exactly one order that untangles everything. The trap is obvious in hindsight — screws block screws, and the first one you remove is rarely the first one you should.",
+      },
+      { type: "h2", text: "Count overlaps before you touch anything" },
+      {
+        type: "p",
+        text: "Look at the plate and find the screw that sits on top of the fewest others. That is almost always your first move. Removing a screw frees the ones beneath it, so each removal should unlock at least one new candidate. If your last three moves did not unlock anything, you removed in the wrong order somewhere — restart rather than force it, the level will not un-jam.",
+      },
+      { type: "h2", text: "Holes are the real currency" },
+      {
+        type: "p",
+        text: "Every removed screw needs somewhere to go, and your tray is finite. Some boards are only solvable if you park early screws in specific holes to leave adjacent ones open. When a board looks unsolvable, the issue is usually not the order — it is where you placed the first five screws. Think of holes as parking spaces with consequences.",
+      },
+      { type: "h2", text: "Late-game method: work in layers" },
+      {
+        type: "ol", items: [
+          "Peel the topmost layer of overlaps first, even if progress feels slow.",
+          "Keep one empty hole in reserve at all times for emergencies.",
+          "When two screws block each other mutually, look for the third screw pinning one of them.",
+        ] },
+      {
+        type: "p",
+        text: "Follow the overlap count and the layers method, and the tangled boards start resolving themselves. Grab a coffee and unscrew your way through Screw Nuts Snap Puzzle.",
+      },
+    ],
+  },
+  {
+    slug: "mahjong-tile-priority-guide",
+    title: "Mahjong Tile Matching: Which Tiles to Free First",
+    gameSlug: "mahjong-master-tile-sort-and-match",
+    description:
+      "The tile-priority rule that prevents dead boards in Mahjong Master, how to spot blocked pairs early, and what to do when only one match remains.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Mahjong solitaire ends in one of two ways: a satisfying final pair, or a board with twelve tiles left and no moves. The difference between those outcomes is decided in the first minute, not the last. Mahjong Master: Tile Sort and Match makes the classic rules easy to read, which makes the strategy easier to practice.",
+      },
+      { type: "h2", text: "The priority rule: free what blocks the most" },
+      {
+        type: "p",
+        text: "Every tile sits on top of others. When choosing between two available matches, take the pair whose removal frees the most buried tiles. Matching two tiles on top of the stack feels productive but changes nothing underneath; matching a pair that uncovers four locked tiles opens whole new sections of the layout. Weight your matches toward the pillars and the base rows.",
+      },
+      { type: "h2", text: "Watch for matched pairs buried together" },
+      {
+        type: "p",
+        text: "The classic deadlock: a matching pair sitting directly on top of each other, unreachable because other tiles pin them. Scan the layout early for identical tiles stacked vertically and prioritize unlocking those columns before you spend moves elsewhere. A matched pair buried together is a countdown timer on your run.",
+      },
+      { type: "h2", text: "Late board triage" },
+      {
+        type: "ul", items: [
+          "Count the remaining tiles of each type — if only one pair of a kind exists, treat those two tiles as untouchable blockers.",
+          "Prefer matches that don't create new single tiles on the top layer.",
+          "If the layout offers a shuffle or hint, spend it with four or more tiles left, not two.",
+        ] },
+      {
+        type: "p",
+        text: "Internalize the priority rule and dead boards become rare instead of routine. Clear some layouts in Mahjong Master: Tile Sort and Match and feel the difference.",
+      },
+    ],
+  },
+  {
+    slug: "pixel-jam-bus-exit-guide",
+    title: "Pixel Jam: The Bus Exit Method for Gridlocked Lots",
+    gameSlug: "pixel-jam-bus-puzzle",
+    description:
+      "A Pixel Jam strategy guide: find the true blocked vehicle, slide in only two directions, and the star-rating mindset for move-efficient exits.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Every level of Pixel Jam is the same joke with a new punchline: a bus that needs out, a lot full of vehicles, and one specific car that is the real problem. The game is a classic sliding-block puzzle dressed in pixel-art traffic, and the fastest way to get better is to stop shuffling and start diagnosing.",
+      },
+      { type: "h2", text: "Find the true blocked vehicle" },
+      {
+        type: "p",
+        text: "The bus's exit lane is blocked by some vehicle; that vehicle is blocked by others; those are blocked by more. Follow this chain backward from the bus until you reach a vehicle that can move freely right now. That vehicle — not the bus, not the nearest car — is your first move. Solving outward from the true blocker turns a messy lot into a short ordered list.",
+      },
+      { type: "h2", text: "Respect the slide direction" },
+      {
+        type: "p",
+        text: "Vehicles only move along their orientation: horizontal cars slide left-right, vertical ones slide up-down. This is the puzzle's whole geometry. When you feel stuck, re-read the direction each vehicle faces — the move you are looking for is usually a vertical slide you dismissed because you were thinking horizontally.",
+      },
+      { type: "h2", text: "Chasing stars: count backward from the exit" },
+      {
+        type: "p",
+        text: "Star ratings reward minimal moves. The trick is to work backward: the bus's final move takes one slide, so the vehicle blocking it must be clear in one slide before that, and so on. Any vehicle not on that critical path can wait. Moving it early wastes moves even when the move looks helpful.",
+      },
+      {
+        type: "p",
+        text: "Diagnose, slide in direction, count backward — three habits, cleaner lots. Untangle a few boards in Pixel Jam and watch your star ratings climb.",
+      },
+    ],
+  },
+  {
+    slug: "ricopop-bank-shot-guide",
+    title: "RicoPop: How to Use Wall Bounces Like a Pool Player",
+    gameSlug: "ricopop",
+    description:
+      "The bank-shot geometry behind big RicoPop clears: mirror aiming, when to bounce versus shoot straight, and cluster-cutting for chain reactions.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "RicoPop is a bubble shooter with a name that tells you its secret: the ricochet is the point. Anyone can pop a cluster that sits in a straight line. The players who clear boards efficiently are the ones who treat the side walls like a pool table — and the math for that is friendlier than it looks.",
+      },
+      { type: "h2", text: "The mirror trick" },
+      {
+        type: "p",
+        text: "To aim a bank shot, imagine the wall is a mirror: the target cluster's reflection appears behind the wall at the same depth. Aim at the reflection and the ball will bounce into the real cluster. One bounce is reliable with a little practice; two bounces are possible but honestly speculative. Build your game around single-bank accuracy and you will rarely need more.",
+      },
+      { type: "h2", text: "When to bounce, when to shoot straight" },
+      {
+        type: "ul", items: [
+          "Bounce when the direct line is blocked or the cluster hangs behind other bubbles.",
+          "Shoot straight when a cut shot can drop a cluster supporting others — cuts beat pops.",
+          "Never bounce into a tight gap unless the mirror line is exact; near-misses widen the ceiling.",
+        ] },
+      { type: "h2", text: "Cut the support, not the cluster" },
+      {
+        type: "p",
+        text: "The biggest clears come from cutting, not popping: find the bubble that connects a big cluster to the ceiling and pop that one connection. Everything below falls at once, and falling clusters clear on the way down. Bank shots are often the only way to reach a support bubble that sits behind other colors — which is exactly why the ricochet and the cut belong in the same plan.",
+      },
+      {
+        type: "p",
+        text: "Think like a pool player, hunt support bubbles, and boards start collapsing in twos and threes. Line up your first bank in RicoPop.",
+      },
+    ],
+  },
+  {
+    slug: "tank-push-sokoban-guide",
+    title: "Tank Push: Sokoban Rules with a Cannon Twist",
+    gameSlug: "tank-push",
+    description:
+      "A Tank Push strategy guide: why you can never pull a crate, how cannon nudges change sokoban planning, and the corner rule that saves runs.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Tank Push is sokoban with treads: push crates onto target tiles, no pulling allowed, and every warehouse is a small logic knot. The cannon adds a genuine twist — you can shove a crate from a distance — but the twist cuts both ways, and half the puzzles are built to punish players who fire first and think later.",
+      },
+      { type: "h2", text: "The corner rule comes first" },
+      {
+        type: "p",
+        text: "A crate pushed into a corner can never be moved again — no pull mechanic exists. Before every push, check the crate's destination and the path behind it: are you driving it toward a wall it can never leave? Experienced players scan for corner-adjacent targets early and route around them. One careless push can end a puzzle that was otherwise solved.",
+      },
+      { type: "h2", text: "The cannon is a scalpel, not a hammer" },
+      {
+        type: "p",
+        text: "Cannon shots nudge crates you cannot reach directly, which sounds like a loophole and plays like a trap: the nudge sends the crate in your firing direction with no fine control, and if it stops in a bad spot, you cannot retrieve it. Use the cannon only when a crate sits exactly in line with its target and nothing else is in the corridor. Everything else is better done the slow way, with treads.",
+      },
+      { type: "h2", text: "Plan in reverse from the targets" },
+      {
+        type: "p",
+        text: "The reliable method for the harder warehouses: start at a target tile and work backward — which corridor can a crate enter from? Which pushes deliver it there? Marking those entry routes tells you which crates to touch first and which to avoid entirely. It turns trial-and-error into a checklist.",
+      },
+      {
+        type: "p",
+        text: "Respect the corners, save the cannon, plan backward. Your first flawless warehouse is closer than you think — roll out in Tank Push.",
+      },
+    ],
+  },
+  {
+    slug: "catchfish-reel-guide",
+    title: "CatchFish Fishing Master: Reel Rhythm and the Rare Fish Hunt",
+    gameSlug: "catchfish-mdash-fishing-master",
+    description:
+      "How to reel without snapping your line in CatchFish, when to upgrade your rod, and the pattern behind rare fish appearances.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "CatchFish — Fishing Master sells a calm loop with a hidden skill ceiling: cast, hook, reel. The reeling part is where fish are won and lines are lost, and the difference between a full cooler and an empty one is rhythm, not luck.",
+      },
+      { type: "h2", text: "Reel against the fish, not through it" },
+      {
+        type: "p",
+        text: "When a fish struggles, pulling harder is exactly wrong — tension spikes and the line snaps. The working rhythm is: reel while the fish rests, stop the moment it fights, and let it run itself tired. Watch the tension indicator if the game shows one; your thumb should mirror it. Players who fail here are almost always reeling through the fight instead of around it.",
+      },
+      { type: "h2", text: "Upgrade in this order" },
+      {
+        type: "ol", items: [
+          "Line strength first — it converts snapped fish into caught fish immediately.",
+          "Rod second — better rods shorten fights and open deeper waters.",
+          "Lure/bait last — it changes what bites, but only matters once you can land it.",
+        ] },
+      { type: "h2", text: "Rare fish follow patterns" },
+      {
+        type: "p",
+        text: "Rare catches are not pure random. They cluster around specific depths and times — the big oddities bite in the deeper zones after you have caught a streak of commons, and some species only appear when you are using the matching bait tier. If you are hunting a specific rare, change one variable at a time: depth first, then bait. Changing everything at once teaches you nothing.",
+      },
+      {
+        type: "p",
+        text: "Fix the rhythm, upgrade the line, hunt with a plan. The cooler fills itself — cast a line in CatchFish — Fishing Master.",
+      },
+    ],
+  },
+  {
+    slug: "midnight-taxi-route-guide",
+    title: "Midnight Taxi Hustle: Route Habits That Double Your Tips",
+    gameSlug: "midnight-taxi-hustle",
+    description:
+      "A Midnight Taxi Hustle guide on pickup routing, clean-ride bonuses, and how to spend timer extensions for longer shifts.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Midnight Taxi Hustle is a night-shift arcade driver: empty streets, good fares, and a timer that never quite loves you back. The players earning big tips are not driving faster — they are driving smarter. Three habits cover most of it.",
+      },
+      { type: "h2", text: "Chain pickups geographically" },
+      {
+        type: "p",
+        text: "The arrow always points to your next passenger, but you get a say in which passenger is next when several are waiting. Look at destinations, not just pickups: a passenger whose drop-off lands near another pickup is worth two fares' worth of time. Ten seconds of reading the map before you commit saves thirty seconds of cross-town driving.",
+      },
+      { type: "h2", text: "Clean rides are the hidden multiplier" },
+      {
+        type: "p",
+        text: "Tips scale with ride quality — collisions and near-misses shave your payout even when the delivery is on time. A smooth ride at 80% speed often out-earns a reckless one at full throttle, and it arrives nearly as fast once you stop compensating for crashes. Brake before corners, not in them, and let the tips stack.",
+      },
+      { type: "h2", text: "Spend extensions on position, not panic" },
+      {
+        type: "ul", items: [
+          "Take a timer extension when you are already near the next pickup — it compounds.",
+          "Never grab one to finish a doomed delivery across the map; abandon and reposition instead.",
+          "Late in the shift, prioritize short inner-city fares over one long haul.",
+        ] },
+      {
+        type: "p",
+        text: "Read the map, drive smooth, extend smart. The night shift pays better already — grab the wheel in Midnight Taxi Hustle.",
+      },
+    ],
+  },
+  {
+    slug: "swarmfront-upgrade-guide",
+    title: "Swarmfront: Upgrade Priorities That Keep You Alive Past Wave Ten",
+    gameSlug: "swarmfront",
+    description:
+      "What to pick between swarm waves in Swarmfront: the fix-your-last-death rule, mobility versus firepower, and when to stop stacking one stat.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Swarmfront is a wave survival game with a simple question at its core: after each wave, which upgrade do you take? Pick well and the swarms become your scoreboard; pick badly and wave eight ends the run you thought was going somewhere. This guide gives the choice a structure.",
+      },
+      { type: "h2", text: "The fix-your-last-death rule" },
+      {
+        type: "p",
+        text: "The best upgrade question is not 'what is strongest?' but 'what nearly killed me last wave?'. Overwhelmed by flankers? Area damage or move speed. Chipped down by constant ranged hits? Sustain or armor. Burst down in one ambush? Health pool. Upgrades are tools for the run you are actually having, not the run you planned — this one rule fixes more builds than any tier list.",
+      },
+      { type: "h2", text: "Mobility is a weapon" },
+      {
+        type: "p",
+        text: "New players undervalue movement because damage numbers feel concrete. But surviving a swarm is mostly about position: kiting the mass, splitting the pack, reaching drops. Move speed and dash upgrades pay off every single second, while a damage upgrade only pays when you are already standing in the right place. If you are ever torn, take the legs.",
+      },
+      { type: "h2", text: "Stop stacking one stat" },
+      {
+        type: "ul", items: [
+          "Damage with no sustain means one chip-death ends the run.",
+          "Sustain with no damage means the swarm grows faster than you clear it.",
+          "Anything without mobility means the flank eventually gets you.",
+        ] },
+      {
+        type: "p",
+        text: "Round out the build, fix the last death, and wave fifteen stops being a wall. Drop into Swarmfront and put the rule to work.",
+      },
+    ],
+  },
+  {
+    slug: "scary-granny-maze-guide",
+    title: "Scary Granny: Horror Maze Escape Without Making a Sound",
+    gameSlug: "scary-granny-horror-maze-escape",
+    description:
+      "A Scary Granny maze guide on noise management, item route planning, and what to do the moment Granny starts heading your way.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "Scary Granny: Horror Maze Escape is hide-and-seek with your pulse as the timer. Granny hunts by sound, the maze reshuffles your plans, and the exit needs items that are never in the same place twice. The game is tense by design, but it is genuinely winnable with a plan — and the plan starts with being quiet.",
+      },
+      { type: "h2", text: "Noise is the real health bar" },
+      {
+        type: "p",
+        text: "Granny does not see well; she hears. Walking is safer than running, and running is loud enough to pull her across the map. Treat every sprint as a decision that costs noise you will want later. Move at walking pace by default, sprint only to break line of sight around a corner, and never sprint in a straight corridor she might be listening to.",
+      },
+      { type: "h2", text: "Plan an item route, not an item hunt" },
+      {
+        type: "p",
+        text: "Wandering into rooms hoping to find the key is how runs end. Instead, commit to a circuit: enter, check one or two likely spots, leave before Granny's patrol overlaps your position. If you clear your route and come up empty, reset to a known-safe corner and plan the next circuit from there. Slow circuits beat one greedy deep dive every time.",
+      },
+      { type: "h2", text: "When she heads your way" },
+      {
+        type: "ul", items: [
+          "Stop moving first — a still player is hard to hear.",
+          "Break line of sight before changing rooms; doorways are her favorite reading spot.",
+          "If hiding, hide before she enters the corridor, not after; hiding in view is just waiting to be found.",
+        ] },
+      {
+        type: "p",
+        text: "Quiet feet, planned circuits, early hides. The maze stops being a nightmare and becomes a route. Good luck in Scary Granny: Horror Maze Escape — you will need it once.",
+      },
+    ],
+  },
+  {
+    slug: "formula-car-stunt-ramp-guide",
+    title: "Formula Car Stunt: Ramp Speed Is the Whole Game",
+    gameSlug: "formula-car-stunt",
+    description:
+      "Why every failed Formula Car Stunt jump is a speed problem, how to read ramp distances, and the throttle habits that keep you on the track.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "In Formula Car Stunt, the track is mostly sky and the jumps are the game. Nearly every crash traces back to one variable the player controlled the whole time: speed at the lip of the ramp. Too slow and you drop; too fast and you overshoot the landing. This guide is about reading ramps like a professional.",
+      },
+      { type: "h2", text: "Read the landing, then choose the speed" },
+      {
+        type: "p",
+        text: "Before you hit any ramp, look at where the track continues: is the landing close or far? Higher? Lower? A close landing asks for a moderate speed; a distant one wants full commitment; a landing above you needs just enough to reach the lip. Players who crash are usually matching their speed to the ramp instead of the landing — the ramp is not the target.",
+      },
+      { type: "h2", text: "The half-throttle zone" },
+      {
+        type: "p",
+        text: "Most tracks give you a straight run before the jump, and the instinct is to floor it. Instead, practice the half-throttle approach: build to about two-thirds speed on the approach straight, then adjust in the final second. Full-throttle entries give you no room to correct, and mid-air steering does almost nothing — your fate is decided before the wheels leave the ramp.",
+      },
+      { type: "h2", text: "Loops and wall-rides" },
+      {
+        type: "ul", items: [
+          "Vertical loops need committed speed — hesitation at the top means falling; enter fast and hold the line.",
+          "For wall-rides, aim slightly up the wall and let momentum carry you; do not steer into the wall.",
+          "After any big landing, brake briefly — most crashes happen on the corner right after the jump.",
+        ] },
+      {
+        type: "p",
+        text: "Read the landing, control the approach, respect the landing corner. The stunts stop being scary and start being routine. Jump into Formula Car Stunt and send it — calibrated.",
+      },
+    ],
+  },
+  {
+    slug: "sparkzap-circuit-guide",
+    title: "SparkZap: Circuit Logic for People Who Hate Crossing Wires",
+    gameSlug: "sparkzap",
+    description:
+      "A SparkZap guide on planning circuits before connecting, handling polarity switches, and the two-connections-ahead rule for late levels.",
+    date: "2026-11-02",
+    blocks: [
+      {
+        type: "p",
+        text: "SparkZap turns electrical circuits into a tidy little puzzle: connect power nodes, complete the circuit, light the board. The early levels are connect-the-dots; the later ones layer in switches and polarity flips that turn your neat grid into a traffic jam of crossed wires. The fix is a planning habit, not faster fingers.",
+      },
+      { type: "h2", text: "Trace before you connect" },
+      {
+        type: "p",
+        text: "Wires that cross cancel or conflict, so the order you draw in matters. Before your first connection, find the pair of nodes that must cross the board diagonally — those are your priority wires, and everything else should route around them. Players who connect the easy short links first always end up repainting the board when the long wire has nowhere clean to go.",
+      },
+      { type: "h2", text: "Polarity switches change the map" },
+      {
+        type: "p",
+        text: "Switch nodes flip polarity, which can turn a completed circuit off or open a path that was dead. Treat switches as verbs, not decoration: every switch you include should be doing something — changing which side of the board is live. If a switch sits in your circuit doing nothing, you have built a wire with extra steps.",
+      },
+      { type: "h2", text: "Two connections ahead" },
+      {
+        type: "ul", items: [
+          "Before placing a wire, confirm the next wire still has a clean route.",
+          "If two routes both work, take the one that leaves the middle of the board empty.",
+          "When stuck, delete the most recent wire first — the mistake is usually the newest one.",
+        ] },
+      {
+        type: "p",
+        text: "Plan the long wires first, make switches earn their place, and think two connections ahead. The late boards stop feeling like spaghetti and start feeling like logic. Flip the switch in SparkZap.",
+      },
+    ],
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | null {
