@@ -3,6 +3,7 @@
  * and games so link equity flows hub <-> guide <-> game. All 40 guides are
  * mapped to exactly one hub.
  */
+import { guides } from "./guides";
 
 export type Hub = {
   slug: string;
