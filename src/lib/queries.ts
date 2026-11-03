@@ -74,6 +74,17 @@ export async function getGameBySlug(slug: string): Promise<Game | null> {
   return rows[0] ?? null;
 }
 
+export async function getGamesBySlugs(slugs: string[]): Promise<Game[]> {
+  if (slugs.length === 0) return [];
+  return query<Game>(
+    `SELECT g.*, c.slug AS category_slug, c.name AS category_name
+     FROM gq_games g JOIN gq_categories c ON c.id = g.category_id
+     WHERE g.slug = ANY($1) AND g.published = true
+     ORDER BY array_position($1::text[], g.slug)`,
+    [slugs]
+  );
+}
+
 export async function getPopularGames(limit = 8): Promise<Game[]> {
   return query<Game>(
     `SELECT g.*, c.slug AS category_slug, c.name AS category_name

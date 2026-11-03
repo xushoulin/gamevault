@@ -96,6 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p>© {new Date().getFullYear()} GameVault — Free online games. Play instantly, no download.</p>
             <nav aria-label="Footer" className="flex flex-wrap gap-4">
               <Link href="/guides" className="hover:text-violet-700">Guides</Link>
+              <Link href="/hub" className="hover:text-violet-700">Game Hubs</Link>
               <Link href="/about" className="hover:text-violet-700">About</Link>
               <Link href="/contact" className="hover:text-violet-700">Contact</Link>
               <Link href="/privacy" className="hover:text-violet-700">Privacy Policy</Link>

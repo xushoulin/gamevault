@@ -2,6 +2,7 @@ import Link from "next/link";
 import GameCard from "@/components/GameCard";
 import AdBanner from "@/components/AdBanner";
 import { getCategories, getGamesByCategory, getPopularGames, getAllGames } from "@/lib/queries";
+import { hubs } from "@/content/hubs";
 
 export const revalidate = 600; // ISR: refresh every 10 min
 
@@ -71,6 +72,32 @@ export default async function Home() {
           </section>
         )
       )}
+
+      {/* Game hubs (topic clusters) */}
+      <section>
+        <div className="flex items-baseline justify-between mb-4">
+          <h2 className="text-2xl font-bold">Game Hubs</h2>
+          <Link href="/hub" className="text-sm text-violet-700 hover:underline">
+            All hubs →
+          </Link>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {hubs.map((h) => (
+            <Link
+              key={h.slug}
+              href={`/hub/${h.slug}`}
+              className="group block rounded-xl bg-white border border-slate-200 p-4 hover:border-violet-400 hover:shadow transition-all"
+            >
+              <h3 className="font-semibold text-slate-900 group-hover:text-violet-700 leading-snug">
+                {h.title}
+              </h3>
+              <p className="text-xs text-slate-400 mt-2">
+                {h.guideSlugs.length} guides · {h.gameSlugs.length} games
+              </p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* SEO text block */}
       <section className="rounded-xl bg-white border border-slate-200 p-6 text-slate-600 leading-relaxed">

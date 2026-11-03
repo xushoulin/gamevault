@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { guides, getGuideBySlug, getRelatedGuides } from "@/content/guides";
+import { getHubForGuide } from "@/content/hubs";
 import { getSiteUrl } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -37,6 +38,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   if (!guide) notFound();
 
   const related = getRelatedGuides(guide.slug, 4);
+  const hub = getHubForGuide(guide.slug);
   const siteUrl = getSiteUrl();
 
   const articleLd = {
@@ -61,10 +63,42 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     ],
   };
 
+  // Build FAQPage structured data from the "Frequently asked questions" section, if present.
+  const faqIdx = guide.blocks.findIndex(
+    (b) => b.type === "h2" && b.text.toLowerCase().startsWith("frequently asked"),
+  );
+  const faqLd =
+    faqIdx >= 0
+      ? (() => {
+          const pairs = guide.blocks
+            .slice(faqIdx + 1)
+            .filter((b) => b.type === "p")
+            .map((b) => {
+              const q = b.text.indexOf("?");
+              if (q === -1) return null;
+              return {
+                "@type": "Question",
+                name: b.text.slice(0, q + 1),
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: b.text.slice(q + 1).trim(),
+                },
+              };
+            })
+            .filter(Boolean);
+          return pairs.length >= 2
+            ? { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: pairs }
+            : null;
+        })()
+      : null;
+
   return (
     <div className="space-y-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      {faqLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      )}
 
       <nav aria-label="Breadcrumb" className="text-sm text-slate-500">
         <Link href="/" className="hover:text-violet-700">Home</Link>
@@ -118,6 +152,20 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         </article>
 
         <aside className="lg:w-[300px] shrink-0 space-y-5">
+          {hub && (
+            <section className="rounded-xl bg-violet-50 border border-violet-200 p-5">
+              <h2 className="font-bold mb-1.5">Part of a Guide Series</h2>
+              <Link
+                href={`/hub/${hub.slug}`}
+                className="text-sm text-violet-700 font-medium hover:underline"
+              >
+                {hub.title} →
+              </Link>
+              <p className="text-xs text-slate-500 mt-1.5">
+                {hub.guideSlugs.length} guides · {hub.gameSlugs.length} games in this collection.
+              </p>
+            </section>
+          )}
           {guide.gameSlug && (
             <section className="rounded-xl bg-white border border-slate-200 p-5">
               <h2 className="font-bold mb-2">Play the Game</h2>
