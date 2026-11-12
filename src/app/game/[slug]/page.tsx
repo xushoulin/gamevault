@@ -6,6 +6,7 @@ import GameCard from "@/components/GameCard";
 import AdBanner from "@/components/AdBanner";
 import { getGameBySlug, getRelatedGames, getAllGames } from "@/lib/queries";
 import { getGuidesByGame } from "@/content/guides";
+import { getGameEditorial } from "@/content/game-editorial";
 
 export const revalidate = 600;
 
@@ -43,6 +44,7 @@ export default async function GamePage({ params }: { params: Promise<{ slug: str
   if (!game) notFound();
 
   const related = await getRelatedGames(game.category_slug!, game.slug, 6);
+  const editorial = getGameEditorial(game.slug);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -69,10 +71,26 @@ export default async function GamePage({ params }: { params: Promise<{ slug: str
     ],
   };
 
+  const faqLd =
+    editorial?.faqs && editorial.faqs.length >= 2
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: editorial.faqs.map(([q, a]) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        }
+      : null;
+
   return (
     <div className="space-y-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      {faqLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+      )}
 
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="text-sm text-slate-500">
@@ -110,23 +128,33 @@ export default async function GamePage({ params }: { params: Promise<{ slug: str
             <p className="text-slate-600 leading-relaxed">{game.instructions}</p>
           </section>
 
-          <section className="rounded-xl bg-white border border-slate-200 p-5">
-            <h2 className="text-lg font-bold mb-3">{game.title} — FAQ</h2>
-            <dl className="space-y-3 text-slate-600">
-              <div>
-                <dt className="font-semibold text-slate-800">Is {game.title} free to play?</dt>
-                <dd>Yes — 100% free, no download and no signup required. Click play and enjoy.</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-slate-800">Can I play {game.title} on mobile?</dt>
-                <dd>Yes. The game is an HTML5 browser game and works on phones, tablets and desktops.</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-slate-800">Does {game.title} need an internet connection?</dt>
-                <dd>You need internet to load this page and the game — after that it runs entirely in your browser.</dd>
-              </div>
-            </dl>
-          </section>
+          {editorial && (
+            <section className="rounded-xl bg-white border border-slate-200 p-5">
+              <h2 className="text-lg font-bold mb-3">{game.title} Tips &amp; Strategy</h2>
+              {editorial.background && (
+                <p className="text-slate-600 leading-relaxed mb-4">{editorial.background}</p>
+              )}
+              <ul className="list-disc pl-6 space-y-2 text-slate-600">
+                {editorial.tips.map((tip) => (
+                  <li key={tip}>{tip}</li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {editorial?.faqs && editorial.faqs.length >= 2 && (
+            <section className="rounded-xl bg-white border border-slate-200 p-5">
+              <h2 className="text-lg font-bold mb-3">{game.title} — FAQ</h2>
+              <dl className="space-y-4 text-slate-600">
+                {editorial.faqs.map(([q, a]) => (
+                  <div key={q}>
+                    <dt className="font-semibold text-slate-800">{q}</dt>
+                    <dd className="mt-1">{a}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          )}
         </div>
 
         {/* Sidebar */}
